@@ -14,6 +14,10 @@
 		DBCD389025C8C63D0015CD3A /* MobileUser+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD388D25C8C63D0015CD3A /* MobileUser+Schema.swift */; };
 		DBCD389125C8C63D0015CD3A /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD388E25C8C63D0015CD3A /* AmplifyModels.swift */; };
 		DBCD389225C8C63D0015CD3A /* MobileUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD388F25C8C63D0015CD3A /* MobileUser.swift */; };
+		DBCD38B725C8ED530015CD3A /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD38B625C8ED530015CD3A /* UseCase.swift */; };
+		DBCD38BC25C8F13B0015CD3A /* UpdateLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD38BB25C8F13B0015CD3A /* UpdateLocationUseCase.swift */; };
+		DBCD38C225C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD38C125C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift */; };
+		DBCD38CD25C8F77B0015CD3A /* MobileUserRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD38CC25C8F77B0015CD3A /* MobileUserRemoteAPI.swift */; };
 		DBE0C9CE25C26F46009B9CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9CD25C26F46009B9CB0 /* AppDelegate.swift */; };
 		DBE0C9D025C26F46009B9CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9CF25C26F46009B9CB0 /* SceneDelegate.swift */; };
 		DBE0C9D225C26F46009B9CB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9D125C26F46009B9CB0 /* ViewController.swift */; };
@@ -56,6 +60,10 @@
 		DBCD388D25C8C63D0015CD3A /* MobileUser+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MobileUser+Schema.swift"; path = "amplify/generated/models/MobileUser+Schema.swift"; sourceTree = SOURCE_ROOT; };
 		DBCD388E25C8C63D0015CD3A /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = SOURCE_ROOT; };
 		DBCD388F25C8C63D0015CD3A /* MobileUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MobileUser.swift; path = amplify/generated/models/MobileUser.swift; sourceTree = SOURCE_ROOT; };
+		DBCD38B625C8ED530015CD3A /* UseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		DBCD38BB25C8F13B0015CD3A /* UpdateLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocationUseCase.swift; sourceTree = "<group>"; };
+		DBCD38C125C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileUserAmplifyAPI.swift; sourceTree = "<group>"; };
+		DBCD38CC25C8F77B0015CD3A /* MobileUserRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileUserRemoteAPI.swift; sourceTree = "<group>"; };
 		DBE0C9CA25C26F46009B9CB0 /* iOS_Emergency_Indoor_Nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Emergency_Indoor_Nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE0C9CD25C26F46009B9CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBE0C9CF25C26F46009B9CB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +142,41 @@
 			path = DataStore;
 			sourceTree = "<group>";
 		};
+		DBCD38B425C8EC910015CD3A /* CoreLogic */ = {
+			isa = PBXGroup;
+			children = (
+				DBCD38C025C8F3AF0015CD3A /* APIs */,
+				DBCD38B525C8EC9D0015CD3A /* UseCases */,
+			);
+			path = CoreLogic;
+			sourceTree = "<group>";
+		};
+		DBCD38B525C8EC9D0015CD3A /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DBCD38B625C8ED530015CD3A /* UseCase.swift */,
+				DBCD38BB25C8F13B0015CD3A /* UpdateLocationUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		DBCD38C025C8F3AF0015CD3A /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				DBCD38CC25C8F77B0015CD3A /* MobileUserRemoteAPI.swift */,
+				DBCD38D125C8F81B0015CD3A /* Amplify */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		DBCD38D125C8F81B0015CD3A /* Amplify */ = {
+			isa = PBXGroup;
+			children = (
+				DBCD38C125C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift */,
+			);
+			path = Amplify;
+			sourceTree = "<group>";
+		};
 		DBE0C9C125C26F46009B9CB0 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +202,7 @@
 		DBE0C9CC25C26F46009B9CB0 /* iOS_Emergency_Indoor_Nav */ = {
 			isa = PBXGroup;
 			children = (
+				DBCD38B425C8EC910015CD3A /* CoreLogic */,
 				DBCD388C25C8C62C0015CD3A /* DataStore */,
 				DBCD388625C8BC420015CD3A /* amplifyconfiguration.json */,
 				DBCD388525C8BC420015CD3A /* awsconfiguration.json */,
@@ -434,9 +478,13 @@
 				DBCD389125C8C63D0015CD3A /* AmplifyModels.swift in Sources */,
 				DBE0C9D225C26F46009B9CB0 /* ViewController.swift in Sources */,
 				DBCD389225C8C63D0015CD3A /* MobileUser.swift in Sources */,
+				DBCD38BC25C8F13B0015CD3A /* UpdateLocationUseCase.swift in Sources */,
 				DBCD389025C8C63D0015CD3A /* MobileUser+Schema.swift in Sources */,
+				DBCD38B725C8ED530015CD3A /* UseCase.swift in Sources */,
 				DBE0C9CE25C26F46009B9CB0 /* AppDelegate.swift in Sources */,
+				DBCD38C225C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift in Sources */,
 				DBE0C9D025C26F46009B9CB0 /* SceneDelegate.swift in Sources */,
+				DBCD38CD25C8F77B0015CD3A /* MobileUserRemoteAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
