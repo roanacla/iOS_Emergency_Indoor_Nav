@@ -11,6 +11,9 @@
 		8475E5D912A1BFFFC85795CF /* Pods_iOS_Emergency_Indoor_Nav_iOS_Emergency_Indoor_NavUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8181AB31CC48D8E877E5EF /* Pods_iOS_Emergency_Indoor_Nav_iOS_Emergency_Indoor_NavUITests.framework */; };
 		DBCD388725C8BC420015CD3A /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = DBCD388525C8BC420015CD3A /* awsconfiguration.json */; };
 		DBCD388825C8BC420015CD3A /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = DBCD388625C8BC420015CD3A /* amplifyconfiguration.json */; };
+		DBCD389025C8C63D0015CD3A /* MobileUser+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD388D25C8C63D0015CD3A /* MobileUser+Schema.swift */; };
+		DBCD389125C8C63D0015CD3A /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD388E25C8C63D0015CD3A /* AmplifyModels.swift */; };
+		DBCD389225C8C63D0015CD3A /* MobileUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD388F25C8C63D0015CD3A /* MobileUser.swift */; };
 		DBE0C9CE25C26F46009B9CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9CD25C26F46009B9CB0 /* AppDelegate.swift */; };
 		DBE0C9D025C26F46009B9CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9CF25C26F46009B9CB0 /* SceneDelegate.swift */; };
 		DBE0C9D225C26F46009B9CB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9D125C26F46009B9CB0 /* ViewController.swift */; };
@@ -50,6 +53,9 @@
 		866CC4997B86C3C7C2CF80B7 /* Pods_iOS_Emergency_Indoor_Nav.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Emergency_Indoor_Nav.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCD388525C8BC420015CD3A /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		DBCD388625C8BC420015CD3A /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
+		DBCD388D25C8C63D0015CD3A /* MobileUser+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MobileUser+Schema.swift"; path = "amplify/generated/models/MobileUser+Schema.swift"; sourceTree = SOURCE_ROOT; };
+		DBCD388E25C8C63D0015CD3A /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = SOURCE_ROOT; };
+		DBCD388F25C8C63D0015CD3A /* MobileUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MobileUser.swift; path = amplify/generated/models/MobileUser.swift; sourceTree = SOURCE_ROOT; };
 		DBE0C9CA25C26F46009B9CB0 /* iOS_Emergency_Indoor_Nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Emergency_Indoor_Nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE0C9CD25C26F46009B9CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBE0C9CF25C26F46009B9CB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +124,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DBCD388C25C8C62C0015CD3A /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				DBCD388E25C8C63D0015CD3A /* AmplifyModels.swift */,
+				DBCD388F25C8C63D0015CD3A /* MobileUser.swift */,
+				DBCD388D25C8C63D0015CD3A /* MobileUser+Schema.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
 		DBE0C9C125C26F46009B9CB0 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +159,7 @@
 		DBE0C9CC25C26F46009B9CB0 /* iOS_Emergency_Indoor_Nav */ = {
 			isa = PBXGroup;
 			children = (
+				DBCD388C25C8C62C0015CD3A /* DataStore */,
 				DBCD388625C8BC420015CD3A /* amplifyconfiguration.json */,
 				DBCD388525C8BC420015CD3A /* awsconfiguration.json */,
 				DBE0C9CD25C26F46009B9CB0 /* AppDelegate.swift */,
@@ -414,7 +431,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCD389125C8C63D0015CD3A /* AmplifyModels.swift in Sources */,
 				DBE0C9D225C26F46009B9CB0 /* ViewController.swift in Sources */,
+				DBCD389225C8C63D0015CD3A /* MobileUser.swift in Sources */,
+				DBCD389025C8C63D0015CD3A /* MobileUser+Schema.swift in Sources */,
 				DBE0C9CE25C26F46009B9CB0 /* AppDelegate.swift in Sources */,
 				DBE0C9D025C26F46009B9CB0 /* SceneDelegate.swift in Sources */,
 			);

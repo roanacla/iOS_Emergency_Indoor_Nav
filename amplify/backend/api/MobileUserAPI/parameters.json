@@ -1,0 +1,5 @@
+{
+    "AppSyncApiName": "MobileUserAPI",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false
+}

@@ -5,7 +5,7 @@ target 'iOS_Emergency_Indoor_Nav' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'Amplify'
-
+  pod 'AmplifyPlugins/AWSAPIPlugin'
   # Pods for iOS_Emergency_Indoor_Nav
 
   target 'iOS_Emergency_Indoor_NavTests' do

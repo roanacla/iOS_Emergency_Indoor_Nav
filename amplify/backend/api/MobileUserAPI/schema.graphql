@@ -1,0 +1,4 @@
+type MobileUser @model {
+  id: ID!
+  location: String
+}
