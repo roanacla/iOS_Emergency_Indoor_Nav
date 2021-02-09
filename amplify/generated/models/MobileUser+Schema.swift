@@ -6,6 +6,7 @@ extension MobileUser {
   // MARK: - CodingKeys 
    public enum CodingKeys: String, ModelKey {
     case id
+    case deviceTokenId
     case location
   }
   
@@ -19,6 +20,7 @@ extension MobileUser {
     
     model.fields(
       .id(),
+      .field(mobileUser.deviceTokenId, is: .optional, ofType: .string),
       .field(mobileUser.location, is: .optional, ofType: .string)
     )
     }

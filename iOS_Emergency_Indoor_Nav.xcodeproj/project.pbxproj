@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2764C0D524E7E5D1C7262869 /* Pods_iOS_Emergency_Indoor_NavTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FEDF1D1CEDA54353D89EB53 /* Pods_iOS_Emergency_Indoor_NavTests.framework */; };
 		8475E5D912A1BFFFC85795CF /* Pods_iOS_Emergency_Indoor_Nav_iOS_Emergency_Indoor_NavUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8181AB31CC48D8E877E5EF /* Pods_iOS_Emergency_Indoor_Nav_iOS_Emergency_Indoor_NavUITests.framework */; };
+		DB7FD07B25CB95A900052FA3 /* CreateUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FD07A25CB95A900052FA3 /* CreateUserUseCase.swift */; };
+		DBAD892925CA37DA00FC0D4C /* NameSpaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD892825CA37DA00FC0D4C /* NameSpaces.swift */; };
+		DBAD892E25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD892D25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift */; };
 		DBCD388725C8BC420015CD3A /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = DBCD388525C8BC420015CD3A /* awsconfiguration.json */; };
 		DBCD388825C8BC420015CD3A /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = DBCD388625C8BC420015CD3A /* amplifyconfiguration.json */; };
 		DBCD389025C8C63D0015CD3A /* MobileUser+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD388D25C8C63D0015CD3A /* MobileUser+Schema.swift */; };
@@ -55,6 +58,10 @@
 		7D419E454348EE027FDAA164 /* Pods-iOS_Emergency_Indoor_Nav.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Emergency_Indoor_Nav.release.xcconfig"; path = "Target Support Files/Pods-iOS_Emergency_Indoor_Nav/Pods-iOS_Emergency_Indoor_Nav.release.xcconfig"; sourceTree = "<group>"; };
 		7EFDF3B03EA239FE7E3203B4 /* Pods-iOS_Emergency_Indoor_NavTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Emergency_Indoor_NavTests.debug.xcconfig"; path = "Target Support Files/Pods-iOS_Emergency_Indoor_NavTests/Pods-iOS_Emergency_Indoor_NavTests.debug.xcconfig"; sourceTree = "<group>"; };
 		866CC4997B86C3C7C2CF80B7 /* Pods_iOS_Emergency_Indoor_Nav.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Emergency_Indoor_Nav.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB7FD07A25CB95A900052FA3 /* CreateUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserUseCase.swift; sourceTree = "<group>"; };
+		DBAD892125CA318D00FC0D4C /* iOS_Emergency_Indoor_Nav.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS_Emergency_Indoor_Nav.entitlements; sourceTree = "<group>"; };
+		DBAD892825CA37DA00FC0D4C /* NameSpaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSpaces.swift; sourceTree = "<group>"; };
+		DBAD892D25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeviceTokenIdUseCase.swift; sourceTree = "<group>"; };
 		DBCD388525C8BC420015CD3A /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		DBCD388625C8BC420015CD3A /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
 		DBCD388D25C8C63D0015CD3A /* MobileUser+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MobileUser+Schema.swift"; path = "amplify/generated/models/MobileUser+Schema.swift"; sourceTree = SOURCE_ROOT; };
@@ -145,6 +152,7 @@
 		DBCD38B425C8EC910015CD3A /* CoreLogic */ = {
 			isa = PBXGroup;
 			children = (
+				DBCD388C25C8C62C0015CD3A /* DataStore */,
 				DBCD38C025C8F3AF0015CD3A /* APIs */,
 				DBCD38B525C8EC9D0015CD3A /* UseCases */,
 			);
@@ -156,6 +164,8 @@
 			children = (
 				DBCD38B625C8ED530015CD3A /* UseCase.swift */,
 				DBCD38BB25C8F13B0015CD3A /* UpdateLocationUseCase.swift */,
+				DBAD892D25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift */,
+				DB7FD07A25CB95A900052FA3 /* CreateUserUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -202,11 +212,12 @@
 		DBE0C9CC25C26F46009B9CB0 /* iOS_Emergency_Indoor_Nav */ = {
 			isa = PBXGroup;
 			children = (
+				DBAD892125CA318D00FC0D4C /* iOS_Emergency_Indoor_Nav.entitlements */,
 				DBCD38B425C8EC910015CD3A /* CoreLogic */,
-				DBCD388C25C8C62C0015CD3A /* DataStore */,
 				DBCD388625C8BC420015CD3A /* amplifyconfiguration.json */,
 				DBCD388525C8BC420015CD3A /* awsconfiguration.json */,
 				DBE0C9CD25C26F46009B9CB0 /* AppDelegate.swift */,
+				DBAD892825CA37DA00FC0D4C /* NameSpaces.swift */,
 				DBE0C9CF25C26F46009B9CB0 /* SceneDelegate.swift */,
 				DBE0C9D125C26F46009B9CB0 /* ViewController.swift */,
 				DBE0C9D325C26F46009B9CB0 /* Main.storyboard */,
@@ -476,14 +487,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBCD389125C8C63D0015CD3A /* AmplifyModels.swift in Sources */,
+				DBAD892925CA37DA00FC0D4C /* NameSpaces.swift in Sources */,
 				DBE0C9D225C26F46009B9CB0 /* ViewController.swift in Sources */,
 				DBCD389225C8C63D0015CD3A /* MobileUser.swift in Sources */,
+				DB7FD07B25CB95A900052FA3 /* CreateUserUseCase.swift in Sources */,
 				DBCD38BC25C8F13B0015CD3A /* UpdateLocationUseCase.swift in Sources */,
 				DBCD389025C8C63D0015CD3A /* MobileUser+Schema.swift in Sources */,
 				DBCD38B725C8ED530015CD3A /* UseCase.swift in Sources */,
 				DBE0C9CE25C26F46009B9CB0 /* AppDelegate.swift in Sources */,
 				DBCD38C225C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift in Sources */,
 				DBE0C9D025C26F46009B9CB0 /* SceneDelegate.swift in Sources */,
+				DBAD892E25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift in Sources */,
 				DBCD38CD25C8F77B0015CD3A /* MobileUserRemoteAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,9 +675,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS_Emergency_Indoor_Nav/iOS_Emergency_Indoor_Nav.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G3B2ACWEFM;
 				INFOPLIST_FILE = iOS_Emergency_Indoor_Nav/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -681,9 +697,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS_Emergency_Indoor_Nav/iOS_Emergency_Indoor_Nav.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G3B2ACWEFM;
 				INFOPLIST_FILE = iOS_Emergency_Indoor_Nav/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
