@@ -13,9 +13,11 @@ enum APIError: Error {
 }
 
 protocol MobileUserRemoteAPI {
+  //Subscriptions
   func create(userID: String) -> AnyCancellable
-  func updateLocation(userID: String, location: String) -> AnyCancellable
-  func updateDeviceTokenId(userID: String, deviceTokenId: String) -> AnyCancellable
-//  func getMobileUser(withID id: String) -> AnyCancellable
+  func updateLocation(mobileUser: MobileUser, location: String) -> AnyCancellable
+  func updateDeviceTokenId(userID: String, newToken: String) -> AnyCancellable
+  
+  //Publishers
   func getMobileUser(withID id: String) -> AnyPublisher<MobileUser?,Error>
 }

@@ -9,11 +9,11 @@ import UIKit
 import Amplify
 import AmplifyPlugins
 import UserNotifications
+import Combine
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  
-  
+  var subscriptions = Set<AnyCancellable>()
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     //Request authorization with APNS (Apple Push Notifications)
+    if UserDefaults.standard.value(forKey: UserDefaultsKeys.userID) == nil {
+      self.createUserSubs()
+        .store(in: &subscriptions)
+    }
     UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert], completionHandler: {granted, error in
       guard granted else { return }
       DispatchQueue.main.async {
@@ -53,10 +57,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     let token = deviceToken.reduce("", { $0 + String(format: "%02x", $1) })
-//    print(token)
-    UserDefaults.standard.set(token, forKey: UserDefaultsKeys.deviceTokenId)
+    UserDefaults.standard.set(token, forKey: UserDefaultsKeys.deviceTokenID)
+    self.updateTokenSubs()
+      .store(in: &subscriptions)
   }
   
   
+}
+
+extension AppDelegate {
+  
+  func createUserSubs() -> AnyCancellable {
+    let useCase = CreateUserUseCase(userID: UserDefaultsData.userID,
+                                    remoteAPI: MobileUserAmplifyAPI())
+    return useCase.start()
+  }
+  
+  func updateTokenSubs() -> AnyCancellable {
+    
+    let useCase = UpdateDeviceTokenIdUseCase(userID: UserDefaultsData.userID,
+                                             tokenID: UserDefaultsData.deviceTokenId,
+                                             remoteAPI: MobileUserAmplifyAPI())
+    return useCase.start()
+  }
 }
 

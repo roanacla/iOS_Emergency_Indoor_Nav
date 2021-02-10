@@ -10,17 +10,16 @@ import Combine
 
 public class UpdateLocationUseCase: UseCase {
   let location: String
-  let userID: String
+  let mobileUser: MobileUser
   let remoteAPI: MobileUserRemoteAPI
   
-  init (userID: String, location: String, remoteAPI: MobileUserRemoteAPI) {
-    self.userID = userID
+  init (mobileUser: MobileUser, location: String, remoteAPI: MobileUserRemoteAPI) {
+    self.mobileUser = mobileUser
     self.location = location
     self.remoteAPI = remoteAPI
   }
   
   public func start() -> AnyCancellable {
-    _ = remoteAPI.getMobileUser(withID: userID)
-    return remoteAPI.updateLocation(userID: userID, location: location)
+    return remoteAPI.updateLocation(mobileUser: mobileUser, location: location)
   }
 }

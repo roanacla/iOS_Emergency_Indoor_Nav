@@ -15,72 +15,36 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    //    createUser()
-    //      .store(in: &subscriptions)
-        updateLocation()
+        updateLocation()?
           .store(in: &subscriptions)
-    //    updateToken()?
-    //      .store(in: &subscriptions)
-//    getMobileUser()?
-//      .store(in: &subscriptions)
   }
   
   deinit {
     subscriptions.removeAll()
   }
   
-  func createUser() -> AnyCancellable {
-    let useCase = CreateUserUseCase(userID: UserDefaultsKeys.userID,
-                                    remoteAPI: MobileUserAmplifyAPI())
-    
-    return useCase.start()
-  }
-  
-  func updateLocation() -> AnyCancellable {
+  func updateLocation() -> AnyCancellable? {
 
     
-    let api = MobileUserAmplifyAPI()
-    let mobileUserPublisher = api.getMobileUser(withID: UserDefaultsKeys.userID).map{$0}
-    let test = mobileUserPublisher.map({ mobileUser -> AnyCancellable in
-      let useCase = UpdateLocationUseCase(userID: mobileUser!.id,
-                                          location: "Peru",
-                                          remoteAPI: MobileUserAmplifyAPI())
-      return useCase.start()
-      
-    })
-    return test.sink(receiveCompletion: {_ in }
-                     , receiveValue: { print($0) })
-  }
-  
-  func updateToken() -> AnyCancellable? {
-    guard let deviceTokenID = UserDefaults.standard.string(forKey: UserDefaultsKeys.deviceTokenId) else { return nil  }
-    let useCase = UpdateDeviceTokenIdUseCase(userID: UserDefaultsKeys.userID,
-                                             deviceTokenId: deviceTokenID,
-                                             remoteAPI: MobileUserAmplifyAPI())
+    let remoteAPI = MobileUserAmplifyAPI()
+    let subscription =
+      remoteAPI
+      .getMobileUser(withID: UserDefaultsData.userID)
+      .map{$0}
+      .map{ mobileUser -> AnyCancellable? in
+        guard let mobileUser = mobileUser else { return nil }
+        let useCase = UpdateLocationUseCase(mobileUser: mobileUser,
+                                            location: "Peru",
+                                            remoteAPI: remoteAPI)
+        return useCase.start()
+        
+      }
+      .sink(
+        receiveCompletion: {_ in },
+        receiveValue: { print($0) }
+      )
     
-    return useCase.start()
-  }
-  
-  
-  
-  func getMobileUser() -> AnyCancellable? {
-    let amplifyAPI = MobileUserAmplifyAPI()
-    let publisher = amplifyAPI.getMobileUser(withID: UserDefaultsKeys.userID)
-
-    return publisher
-      .sink(receiveCompletion: { result in
-        switch result {
-        case .finished:
-          print("Yes")
-
-        default:
-          print("Something is wrong")
-        }
-      }, receiveValue: { result in
-        guard let result = result else { return }
-        print("🟢")
-        print(result)
-      })
+    return subscription
   }
 }
 

@@ -10,16 +10,16 @@ import Combine
 
 class UpdateDeviceTokenIdUseCase: UseCase {
   let userID: String
-  let deviceTokenId: String
+  let tokenID: String
   let remoteAPI: MobileUserRemoteAPI
   
-  init (userID: String, deviceTokenId: String, remoteAPI: MobileUserRemoteAPI) {
+  init (userID: String, tokenID: String, remoteAPI: MobileUserRemoteAPI) {
     self.userID = userID
-    self.deviceTokenId = deviceTokenId
+    self.tokenID = tokenID
     self.remoteAPI = remoteAPI
   }
   
   public func start() -> AnyCancellable {
-    return remoteAPI.updateDeviceTokenId(userID: userID, deviceTokenId: deviceTokenId)
+    return remoteAPI.updateDeviceTokenId(userID: userID, newToken: tokenID)
   }
 }
