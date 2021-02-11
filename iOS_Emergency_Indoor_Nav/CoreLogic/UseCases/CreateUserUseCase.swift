@@ -10,14 +10,16 @@ import Combine
 
 class CreateUserUseCase: UseCase {
   let userID: String
+  let tokenID: String
   let remoteAPI: MobileUserRemoteAPI
   
-  init (userID: String,remoteAPI: MobileUserRemoteAPI) {
+  init (userID: String, tokenID: String, remoteAPI: MobileUserRemoteAPI) {
     self.userID = userID
+    self.tokenID = tokenID
     self.remoteAPI = remoteAPI
   }
   
   public func start() -> AnyCancellable {
-    return remoteAPI.create(userID: userID)
+    return remoteAPI.create(userID: userID, tokenID: tokenID)
   }
 }

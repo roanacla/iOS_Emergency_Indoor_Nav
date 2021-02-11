@@ -15,8 +15,11 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-        updateLocation()?
-          .store(in: &subscriptions)
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 10) { // change 2 to desired number of seconds
+      self.updateLocation()?
+        .store(in: &self.subscriptions)
+    }
   }
   
   deinit {
@@ -25,6 +28,7 @@ class ViewController: UIViewController {
   
   func updateLocation() -> AnyCancellable? {
     let updateLocationUseCase = UpdateLocationUseCase(userID: UserDefaultsData.userID,
+                                                      tokenID: UserDefaultsData.deviceTokenId,
                                                       location: "Colombia",
                                                       remoteAPI: MobileUserAmplifyAPI())
     
