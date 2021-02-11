@@ -31,25 +31,43 @@ public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
     return sink
   }
   
-  func updateLocation(mobileUser: MobileUser, location: String) -> AnyCancellable {
-    var mobileUser = mobileUser
-    mobileUser.location = location
-    let sink = Amplify.API.mutate(request: .update(mobileUser))
+  func updateLocation(userID: String, location: String) -> AnyCancellable {
+    return Amplify.API
+      .query(request: .get(MobileUser.self, byId: userID))
       .resultPublisher
-      .sink { completion in
-        if case let .failure(error) = completion {
-          print("🔴 Failed to update location graphql \(error)")
-        }
+      .tryMap { result -> MobileUser in
+        //Cast Amplify publisher to AnyPublisher
+        guard let mobileUser = try result.get() else { throw AmplifyError.unknown  }
+        return mobileUser
       }
-      receiveValue: { result in
-        switch result {
-        case .success(let location):
-          print("🟢 Successfully updated user's location: \(location)")
-        case .failure(let graphQLError):
-          print("Could not decode result: \(graphQLError)")
-        }
+      .eraseToAnyPublisher()
+      .map{$0}
+      .map { mobileUser -> AnyCancellable in
+        var mobileUser = mobileUser
+        mobileUser.location = location
+        return  Amplify.API.mutate(request: .update(mobileUser))
+          .resultPublisher
+          .sink { completion in
+            if case let .failure(error) = completion {
+              print("🔴 Failed to update location graphql \(error)")
+            }
+          }
+          receiveValue: { result in
+            switch result {
+            case .success(let location):
+              print("🟢 Successfully updated user's location: \(location)")
+            case .failure(let graphQLError):
+              print("Could not decode result: \(graphQLError)")
+            }
+          }
       }
-    return sink
+      .retry(2)
+      .sink(
+        receiveCompletion: {_ in },
+        receiveValue: { _ in }
+      )
+    
+    
   }
   
   func updateDeviceTokenId(userID: String, newToken: String) -> AnyCancellable {
@@ -89,28 +107,7 @@ public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
         receiveValue: { _ in }
       )
   }
-  
-//  func updateDeviceTokenId(userID: String) -> AnyCancellable {
-//
-//    self.getMobileUser(withID: userID, completion: { mobileUser in
-//      return Amplify.API.mutate(request: .update(mobileUser))
-//        .resultPublisher
-//        .sink { completion in
-//          if case let .failure(error) = completion {
-//            print("🔴 Failed to to update user's token ID \(error)")
-//          }
-//        }
-//        receiveValue: { result in
-//          switch result {
-//          case .success(let tokenID):
-//            print("🟢 Successfully updated user's device token: \(tokenID)")
-//          case .failure(let graphQLError):
-//            print("Could not decode result: \(graphQLError)")
-//          }
-//        }
-//    })
-//  }
-  
+    
   enum AmplifyError: Error {
       case unknown
     }

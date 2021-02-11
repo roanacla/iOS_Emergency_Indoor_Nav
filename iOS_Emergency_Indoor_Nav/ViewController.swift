@@ -24,27 +24,11 @@ class ViewController: UIViewController {
   }
   
   func updateLocation() -> AnyCancellable? {
-
+    let updateLocationUseCase = UpdateLocationUseCase(userID: UserDefaultsData.userID,
+                                                      location: "Colombia",
+                                                      remoteAPI: MobileUserAmplifyAPI())
     
-    let remoteAPI = MobileUserAmplifyAPI()
-    let subscription =
-      remoteAPI
-      .getMobileUser(withID: UserDefaultsData.userID)
-      .map{$0}
-      .map{ mobileUser -> AnyCancellable? in
-        guard let mobileUser = mobileUser else { return nil }
-        let useCase = UpdateLocationUseCase(mobileUser: mobileUser,
-                                            location: "Peru",
-                                            remoteAPI: remoteAPI)
-        return useCase.start()
-        
-      }
-      .sink(
-        receiveCompletion: {_ in },
-        receiveValue: { print($0) }
-      )
-    
-    return subscription
+    return updateLocationUseCase.start()
   }
 }
 
