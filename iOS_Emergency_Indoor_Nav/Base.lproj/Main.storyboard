@@ -1,24 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p8s-g2-xQS">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Indoor Map View Controller-->
+        <scene sceneID="SgO-wD-rOU">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="p8s-g2-xQS" customClass="IndoorMapViewController" customModule="Dinoseum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SGC-3n-B2d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrY-d6-Udl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                            <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gqw-Uc-dN6" customClass="LevelPickerView" customModule="Dinoseum" customModuleProvider="target">
+                                <rect key="frame" x="349" y="64" width="45" height="45"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zCR-D8-38x">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="bqy-td-mGP">
+                                            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ebb-fQ-znR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ebb-fQ-znR" firstAttribute="leading" secondItem="bqy-td-mGP" secondAttribute="leading" id="MOW-Eb-BtD"/>
+                                                <constraint firstAttribute="bottom" secondItem="ebb-fQ-znR" secondAttribute="bottom" id="dqe-Mt-LXe"/>
+                                                <constraint firstItem="ebb-fQ-znR" firstAttribute="top" secondItem="bqy-td-mGP" secondAttribute="top" id="xUV-N3-ciI"/>
+                                                <constraint firstAttribute="trailing" secondItem="ebb-fQ-znR" secondAttribute="trailing" id="yaT-Xy-da4"/>
+                                            </constraints>
+                                        </view>
+                                        <blurEffect style="regular"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zCR-D8-38x" secondAttribute="trailing" id="2fW-pH-A5a"/>
+                                    <constraint firstAttribute="bottom" secondItem="zCR-D8-38x" secondAttribute="bottom" id="KoM-SO-vBA"/>
+                                    <constraint firstAttribute="width" constant="45" id="OtY-uS-Jtf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="cb2-EB-OaG"/>
+                                    <constraint firstItem="zCR-D8-38x" firstAttribute="top" secondItem="Gqw-Uc-dN6" secondAttribute="top" id="dRL-zX-RJU"/>
+                                    <constraint firstItem="zCR-D8-38x" firstAttribute="leading" secondItem="Gqw-Uc-dN6" secondAttribute="leading" id="xDv-Hd-MlU"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="backgroundView" destination="zCR-D8-38x" id="MG0-1s-msQ"/>
+                                    <outlet property="delegate" destination="p8s-g2-xQS" id="7L0-4A-ybn"/>
+                                    <outlet property="stackView" destination="ebb-fQ-znR" id="Uw4-KZ-j6s"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fD1-z9-L1Z">
+                                <rect key="frame" x="184" y="832" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="showRoute:" destination="p8s-g2-xQS" eventType="touchUpInside" id="Mxc-mc-WQb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kGi-Vf-fW1"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fD1-z9-L1Z" firstAttribute="centerX" secondItem="SGC-3n-B2d" secondAttribute="centerX" id="5V0-ib-Wup"/>
+                            <constraint firstItem="VrY-d6-Udl" firstAttribute="trailing" secondItem="SGC-3n-B2d" secondAttribute="trailing" id="NEl-Z5-3fM"/>
+                            <constraint firstItem="fD1-z9-L1Z" firstAttribute="bottom" secondItem="kGi-Vf-fW1" secondAttribute="bottom" id="Sjd-K8-wx4"/>
+                            <constraint firstItem="VrY-d6-Udl" firstAttribute="bottom" secondItem="SGC-3n-B2d" secondAttribute="bottom" id="dsd-Rc-FGz"/>
+                            <constraint firstItem="kGi-Vf-fW1" firstAttribute="trailing" secondItem="Gqw-Uc-dN6" secondAttribute="trailing" constant="20" id="jc2-0D-ruu"/>
+                            <constraint firstItem="Gqw-Uc-dN6" firstAttribute="top" secondItem="kGi-Vf-fW1" secondAttribute="top" constant="20" id="mRR-VJ-fb4"/>
+                            <constraint firstItem="VrY-d6-Udl" firstAttribute="top" secondItem="SGC-3n-B2d" secondAttribute="top" id="oPD-fw-Qtd"/>
+                            <constraint firstItem="VrY-d6-Udl" firstAttribute="leading" secondItem="SGC-3n-B2d" secondAttribute="leading" id="u2g-0s-Cdc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="levelPicker" destination="Gqw-Uc-dN6" id="lnV-6R-1Uz"/>
+                        <outlet property="mapView" destination="VrY-d6-Udl" id="vIm-Q1-7Ma"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i3Z-fn-Cso" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="14" y="-114"/>
         </scene>
     </scenes>
 </document>
