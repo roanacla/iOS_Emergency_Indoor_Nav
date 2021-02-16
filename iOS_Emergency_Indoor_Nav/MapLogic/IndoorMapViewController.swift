@@ -143,7 +143,11 @@ class IndoorMapViewController: UIViewController, MKMapViewDelegate, LevelPickerD
     }
     
     // Begin by displaying the level-specific information for Ordinal 0 (which is not necessarily the first level in the list).
-    if let baseLevel = levels.first(where: { $0.properties.ordinal == 0 }) {
+    // $0.properties.ordinal:
+    // C = 1
+    // P = 0
+    // LL = -1
+    if let baseLevel = levels.first(where: { $0.properties.ordinal == 1 }) {
       levelPicker.selectedIndex = self.levels.firstIndex(of: baseLevel)!
     }
   }

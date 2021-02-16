@@ -10,7 +10,7 @@
         <!--Indoor Map View Controller-->
         <scene sceneID="SgO-wD-rOU">
             <objects>
-                <viewController id="p8s-g2-xQS" customClass="IndoorMapViewController" customModule="Dinoseum" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="p8s-g2-xQS" customClass="IndoorMapViewController" customModule="iOS_Emergency_Indoor_Nav" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SGC-3n-B2d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,7 +18,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrY-d6-Udl">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
-                            <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gqw-Uc-dN6" customClass="LevelPickerView" customModule="Dinoseum" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gqw-Uc-dN6" customClass="LevelPickerView" customModule="iOS_Emergency_Indoor_Nav" customModuleProvider="target">
                                 <rect key="frame" x="349" y="64" width="45" height="45"/>
                                 <subviews>
                                     <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zCR-D8-38x">
