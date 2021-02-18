@@ -26,6 +26,8 @@
 		DB626CF325D724D0007BCAF5 /* Opening.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB626CD825D724D0007BCAF5 /* Opening.swift */; };
 		DB626CF425D724D0007BCAF5 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB626CD925D724D0007BCAF5 /* Level.swift */; };
 		DB626CFF25D72877007BCAF5 /* IMDFData in Resources */ = {isa = PBXBuildFile; fileRef = DB626CFE25D72877007BCAF5 /* IMDFData */; };
+		DB626D0425DC66E6007BCAF5 /* San Jose Convention Center.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DB626D0325DC66E6007BCAF5 /* San Jose Convention Center.gpx */; };
+		DB626D0925DC66EE007BCAF5 /* Custom.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DB626D0825DC66EE007BCAF5 /* Custom.gpx */; };
 		DB7FD07B25CB95A900052FA3 /* CreateUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FD07A25CB95A900052FA3 /* CreateUserUseCase.swift */; };
 		DBAD892925CA37DA00FC0D4C /* NameSpaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD892825CA37DA00FC0D4C /* NameSpaces.swift */; };
 		DBAD892E25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD892D25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift */; };
@@ -92,6 +94,8 @@
 		DB626CD825D724D0007BCAF5 /* Opening.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opening.swift; sourceTree = "<group>"; };
 		DB626CD925D724D0007BCAF5 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		DB626CFE25D72877007BCAF5 /* IMDFData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IMDFData; sourceTree = "<group>"; };
+		DB626D0325DC66E6007BCAF5 /* San Jose Convention Center.gpx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "San Jose Convention Center.gpx"; sourceTree = SOURCE_ROOT; };
+		DB626D0825DC66EE007BCAF5 /* Custom.gpx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Custom.gpx; sourceTree = SOURCE_ROOT; };
 		DB7FD07A25CB95A900052FA3 /* CreateUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserUseCase.swift; sourceTree = "<group>"; };
 		DBAD892125CA318D00FC0D4C /* iOS_Emergency_Indoor_Nav.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS_Emergency_Indoor_Nav.entitlements; sourceTree = "<group>"; };
 		DBAD892825CA37DA00FC0D4C /* NameSpaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSpaces.swift; sourceTree = "<group>"; };
@@ -285,6 +289,8 @@
 		DBE0C9CC25C26F46009B9CB0 /* iOS_Emergency_Indoor_Nav */ = {
 			isa = PBXGroup;
 			children = (
+				DB626D0825DC66EE007BCAF5 /* Custom.gpx */,
+				DB626D0325DC66E6007BCAF5 /* San Jose Convention Center.gpx */,
 				DBAD892125CA318D00FC0D4C /* iOS_Emergency_Indoor_Nav.entitlements */,
 				DBCD38B425C8EC910015CD3A /* CoreLogic */,
 				DBCD388625C8BC420015CD3A /* amplifyconfiguration.json */,
@@ -431,7 +437,9 @@
 			files = (
 				DBCD388725C8BC420015CD3A /* awsconfiguration.json in Resources */,
 				DBE0C9DA25C26F48009B9CB0 /* LaunchScreen.storyboard in Resources */,
+				DB626D0925DC66EE007BCAF5 /* Custom.gpx in Resources */,
 				DBCD388825C8BC420015CD3A /* amplifyconfiguration.json in Resources */,
+				DB626D0425DC66E6007BCAF5 /* San Jose Convention Center.gpx in Resources */,
 				DBE0C9D725C26F48009B9CB0 /* Assets.xcassets in Resources */,
 				DB626CFF25D72877007BCAF5 /* IMDFData in Resources */,
 				DBE0C9D525C26F46009B9CB0 /* Main.storyboard in Resources */,

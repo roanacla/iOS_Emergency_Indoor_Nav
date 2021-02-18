@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="Open GPX Tracker for iOS">
+	<wpt lat="37.328249" lon="-121.889695">
+		<time>2020-11-13T00:00:00Z</time>
+		<name>A</name>
+		<desc>Nov 12, 2020 at 4:00:00 PM</desc>
+	</wpt>
+	<trk>
+	</trk>
+</gpx>

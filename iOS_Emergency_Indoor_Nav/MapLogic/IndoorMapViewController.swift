@@ -31,6 +31,11 @@ class IndoorMapViewController: UIViewController, MKMapViewDelegate, LevelPickerD
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    //TODO: Use just to pin locations - Delete for production
+    let longPressRecogniser = UILongPressGestureRecognizer(target: self, action: #selector(IndoorMapViewController.handleLongPress(_:)))
+    longPressRecogniser.minimumPressDuration = 1.0
+    mapView.addGestureRecognizer(longPressRecogniser)
+    
     // Request location authorization so the user's current location can be displayed on the map
     locationManager.requestWhenInUseAuthorization()
     locationManager.delegate = self
@@ -79,6 +84,19 @@ class IndoorMapViewController: UIViewController, MKMapViewDelegate, LevelPickerD
     setupLevelPicker()
     
   }
+  //TODO: Use just to pin locations - Delete for production
+  @objc func handleLongPress(_ gestureRecognizer : UIGestureRecognizer){
+      if gestureRecognizer.state != .began { return }
+
+      let touchPoint = gestureRecognizer.location(in: mapView)
+      let touchMapCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+    print("🧭")
+      print(touchMapCoordinate)
+    let newPin = MKPointAnnotation()
+    newPin.coordinate = touchMapCoordinate
+    mapView.addAnnotation(newPin)
+  }
+  
   @IBAction func showRoute(_ sender: Any) {
     loadDirections()
   }
