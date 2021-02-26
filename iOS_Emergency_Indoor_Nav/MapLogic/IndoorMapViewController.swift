@@ -32,9 +32,9 @@ class IndoorMapViewController: UIViewController, MKMapViewDelegate, LevelPickerD
     super.viewDidLoad()
     
     //TODO: Use just to pin locations - Delete for production
-    let longPressRecogniser = UILongPressGestureRecognizer(target: self, action: #selector(IndoorMapViewController.handleLongPress(_:)))
-    longPressRecogniser.minimumPressDuration = 1.0
-    mapView.addGestureRecognizer(longPressRecogniser)
+//    let longPressRecogniser = UILongPressGestureRecognizer(target: self, action: #selector(IndoorMapViewController.handleLongPress(_:)))
+//    longPressRecogniser.minimumPressDuration = 1.0
+//    mapView.addGestureRecognizer(longPressRecogniser)
     
     // Request location authorization so the user's current location can be displayed on the map
     locationManager.requestWhenInUseAuthorization()
@@ -85,32 +85,41 @@ class IndoorMapViewController: UIViewController, MKMapViewDelegate, LevelPickerD
     
   }
   //TODO: Use just to pin locations - Delete for production
-  @objc func handleLongPress(_ gestureRecognizer : UIGestureRecognizer){
-      if gestureRecognizer.state != .began { return }
-
-      let touchPoint = gestureRecognizer.location(in: mapView)
-      let touchMapCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-    print("🧭")
-      print(touchMapCoordinate)
-    let newPin = MKPointAnnotation()
-    newPin.coordinate = touchMapCoordinate
-    mapView.addAnnotation(newPin)
-  }
+//  @objc func handleLongPress(_ gestureRecognizer : UIGestureRecognizer){
+//      if gestureRecognizer.state != .began { return }
+//
+//      let touchPoint = gestureRecognizer.location(in: mapView)
+//      let touchMapCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+//    print("🧭")
+//      print(touchMapCoordinate)
+//    let newPin = MKPointAnnotation()
+//    newPin.coordinate = touchMapCoordinate
+//    mapView.addAnnotation(newPin)
+//  }
   
   @IBAction func showRoute(_ sender: Any) {
     loadDirections()
   }
   
   //MARK: - Functions
-  private func loadDirections() {
+  func loadDirections() {
     //    guard let start = currentLocation else { return }
     var points: [CLLocationCoordinate2D] = []
-    points.append(CLLocationCoordinate2DMake(37.328249, -121.889695))
-    points.append(CLLocationCoordinate2DMake(37.328954, -121.890237))
-    points.append(CLLocationCoordinate2DMake(37.329225, -121.889656))
-    points.append(CLLocationCoordinate2DMake(37.329155, -121.889556))
-    points.append(CLLocationCoordinate2DMake(37.329655, -121.888656))
+//    points.append(CLLocationCoordinate2DMake(37.328249, -121.889695))
+//    points.append(CLLocationCoordinate2DMake(37.328954, -121.890237))
+//    points.append(CLLocationCoordinate2DMake(37.329225, -121.889656))
+//    points.append(CLLocationCoordinate2DMake(37.329155, -121.889556))
+//    points.append(CLLocationCoordinate2DMake(37.329655, -121.888656))
+//    points.append(CLLocationCoordinate2DMake(37.33, -121.888950))
+
+    points.append(CLLocationCoordinate2DMake(37.329244889480464, -121.88843239162776))
+    points.append(CLLocationCoordinate2DMake(37.32946280543797, -121.8888624377502))
+    points.append(CLLocationCoordinate2DMake(37.32961956777538, -121.88867075405378))
+    points.append(CLLocationCoordinate2DMake(37.329776817527076, -121.88878094368332))
+//    points.append(CLLocationCoordinate2DMake(37.329655, -121.888656))
     points.append(CLLocationCoordinate2DMake(37.33, -121.888950))
+    
+    
     let polygon = MKPolygon(coordinates: &points, count: points.count)
     mapView.addOverlay(polygon)
     

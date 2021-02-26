@@ -27,12 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     //Request authorization with APNS (Apple Push Notifications)
-    UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert], completionHandler: {granted, error in
+    let center = UNUserNotificationCenter.current()
+    center.requestAuthorization(options: [.badge, .sound, .alert]) {
+      [weak self] granted, error in
       guard granted else { return }
+      
+      center.delegate = self
       DispatchQueue.main.async {
         application.registerForRemoteNotifications()
       }
-    })
+    }
         
     return true
   }
@@ -66,9 +70,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         .store(in: &subscriptions)
     }
   }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
   
+  
+  func userNotificationCenter(
+    _ center: UNUserNotificationCenter,
+    willPresent notification: UNNotification,
+    withCompletionHandler completionHandler:
+    @escaping (UNNotificationPresentationOptions) -> Void) {
+    
+    completionHandler([.banner, .sound, .badge])
+  }
+  
+  
+  
+
+  func userNotificationCenter(
+    _ center: UNUserNotificationCenter,
+    didReceive response: UNNotificationResponse,
+    withCompletionHandler completionHandler: @escaping () -> Void) {
+
+    let userInfo = response.notification.request.content.userInfo
+    let typeOfGun = userInfo["typeOfGun"] as! String
+    print("🟢🟢")
+    print(typeOfGun) //[R-M1, W-1, w,14}
+    guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else {
+      return
+    }
+
+    if let vc = rootViewController as? IndoorMapViewController {
+//      vc.displayImage(typeOfGun: typeOfGun)
+      vc.loadDirections()
+    }
+
+    completionHandler()
+  }
   
 }
+
 
 extension AppDelegate {
   

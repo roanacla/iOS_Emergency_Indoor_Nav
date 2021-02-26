@@ -94,8 +94,8 @@
 		DB626CD825D724D0007BCAF5 /* Opening.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opening.swift; sourceTree = "<group>"; };
 		DB626CD925D724D0007BCAF5 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		DB626CFE25D72877007BCAF5 /* IMDFData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IMDFData; sourceTree = "<group>"; };
-		DB626D0325DC66E6007BCAF5 /* San Jose Convention Center.gpx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "San Jose Convention Center.gpx"; sourceTree = SOURCE_ROOT; };
-		DB626D0825DC66EE007BCAF5 /* Custom.gpx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Custom.gpx; sourceTree = SOURCE_ROOT; };
+		DB626D0325DC66E6007BCAF5 /* San Jose Convention Center.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "San Jose Convention Center.gpx"; sourceTree = SOURCE_ROOT; };
+		DB626D0825DC66EE007BCAF5 /* Custom.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Custom.gpx; sourceTree = SOURCE_ROOT; };
 		DB7FD07A25CB95A900052FA3 /* CreateUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserUseCase.swift; sourceTree = "<group>"; };
 		DBAD892125CA318D00FC0D4C /* iOS_Emergency_Indoor_Nav.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS_Emergency_Indoor_Nav.entitlements; sourceTree = "<group>"; };
 		DBAD892825CA37DA00FC0D4C /* NameSpaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSpaces.swift; sourceTree = "<group>"; };
@@ -779,7 +779,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G3B2ACWEFM;
 				INFOPLIST_FILE = iOS_Emergency_Indoor_Nav/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -801,7 +801,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G3B2ACWEFM;
 				INFOPLIST_FILE = iOS_Emergency_Indoor_Nav/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
