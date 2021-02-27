@@ -17,6 +17,7 @@ class IndoorMapViewController: UIViewController, MKMapViewDelegate, LevelPickerD
   
   //MARK: - Properties
   var currentLocation: CLLocation?
+  var safeRegions: [SafeRegion] = []
   
   var venue: Venue?
   private var levels: [Level] = []
@@ -83,7 +84,10 @@ class IndoorMapViewController: UIViewController, MKMapViewDelegate, LevelPickerD
     // Setup the level picker with the shortName of each level
     setupLevelPicker()
     
+    loadSafeRegions()
+    
   }
+  
   //TODO: Use just to pin locations - Delete for production
 //  @objc func handleLongPress(_ gestureRecognizer : UIGestureRecognizer){
 //      if gestureRecognizer.state != .began { return }
@@ -102,6 +106,43 @@ class IndoorMapViewController: UIViewController, MKMapViewDelegate, LevelPickerD
   }
   
   //MARK: - Functions
+  func loadSafeRegions() {
+    guard let entries = loadSafeRegionsPlist() else { fatalError("Unable to load data") }
+    
+    for property in entries {
+      guard let name = property["Name"] as? String,
+            let latitude = property["Latitude"] as? NSNumber,
+            let longitude = property["Longitude"] as? NSNumber else { fatalError("Error reading data") }
+
+      let safeRegion = SafeRegion(latitude: latitude.doubleValue, longitude: longitude.doubleValue, name: name)
+      safeRegions.append(safeRegion)
+    }
+  }
+  
+  private func loadSafeRegionsPlist() -> [[String: Any]]? {
+    guard let plistUrl = Bundle.main.url(forResource: "SafeRegions", withExtension: "plist"),
+      let plistData = try? Data(contentsOf: plistUrl) else { return nil }
+    var placedEntries: [[String: Any]]? = nil
+    
+    do {
+      placedEntries = try PropertyListSerialization.propertyList(from: plistData, options: [], format: nil) as? [[String: Any]]
+    } catch {
+      print("error reading plist")
+    }
+    return placedEntries
+  }
+  
+  private func activateLocationServices() {
+    if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+      for safeRegion in safeRegions {
+        let region = CLCircularRegion(center: safeRegion.location.coordinate, radius: 5, identifier: safeRegion.name)
+        region.notifyOnEntry = true
+        locationManager.startMonitoring(for: region)
+      }
+    }
+    locationManager.startUpdatingLocation()
+  }
+  
   func loadDirections() {
     //    guard let start = currentLocation else { return }
     var points: [CLLocationCoordinate2D] = []
@@ -287,10 +328,27 @@ extension IndoorMapViewController: CLLocationManagerDelegate {
     
   }
   
+  func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+    if presentedViewController == nil {
+      let alertController = UIAlertController(title: "You are safe now", message: "Plasese wait for first responder's instrucitons", preferredStyle: .alert)
+      let alertAction = UIAlertAction(title: "OK", style: .default) {
+        [weak self] action in
+        self?.dismiss(animated: true, completion: nil)
+      }
+      alertController.addAction(alertAction)
+      present(alertController, animated: false, completion: nil)
+    }
+  }
+  
+  func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+    print(error.localizedDescription)
+  }
+  
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     
     if status == .authorizedWhenInUse || status == .authorizedAlways {
       locationManager.startUpdatingLocation()
+      activateLocationServices()
     }
     
   }
