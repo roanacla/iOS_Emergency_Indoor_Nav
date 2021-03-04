@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2764C0D524E7E5D1C7262869 /* Pods_iOS_Emergency_Indoor_NavTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FEDF1D1CEDA54353D89EB53 /* Pods_iOS_Emergency_Indoor_NavTests.framework */; };
 		8475E5D912A1BFFFC85795CF /* Pods_iOS_Emergency_Indoor_Nav_iOS_Emergency_Indoor_NavUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF8181AB31CC48D8E877E5EF /* Pods_iOS_Emergency_Indoor_Nav_iOS_Emergency_Indoor_NavUITests.framework */; };
+		DB57B6A225F072FF00D17DFC /* IndoorMapViewController+LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB57B6A125F072FF00D17DFC /* IndoorMapViewController+LocationManagerDelegate.swift */; };
+		DB57B6AA25F0745B00D17DFC /* IndoorMapViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB57B6A925F0745B00D17DFC /* IndoorMapViewController+MKMapViewDelegate.swift */; };
 		DB626C4525D5BAE0007BCAF5 /* GetMobileUserUserCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB626C4425D5BAE0007BCAF5 /* GetMobileUserUserCase.swift */; };
 		DB626CDA25D724D0007BCAF5 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB626CBB25D724D0007BCAF5 /* Styles.swift */; };
 		DB626CDB25D724D0007BCAF5 /* IMDFDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB626CBC25D724D0007BCAF5 /* IMDFDecoder.swift */; };
@@ -80,6 +82,8 @@
 		7D419E454348EE027FDAA164 /* Pods-iOS_Emergency_Indoor_Nav.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Emergency_Indoor_Nav.release.xcconfig"; path = "Target Support Files/Pods-iOS_Emergency_Indoor_Nav/Pods-iOS_Emergency_Indoor_Nav.release.xcconfig"; sourceTree = "<group>"; };
 		7EFDF3B03EA239FE7E3203B4 /* Pods-iOS_Emergency_Indoor_NavTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Emergency_Indoor_NavTests.debug.xcconfig"; path = "Target Support Files/Pods-iOS_Emergency_Indoor_NavTests/Pods-iOS_Emergency_Indoor_NavTests.debug.xcconfig"; sourceTree = "<group>"; };
 		866CC4997B86C3C7C2CF80B7 /* Pods_iOS_Emergency_Indoor_Nav.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Emergency_Indoor_Nav.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB57B6A125F072FF00D17DFC /* IndoorMapViewController+LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndoorMapViewController+LocationManagerDelegate.swift"; sourceTree = "<group>"; };
+		DB57B6A925F0745B00D17DFC /* IndoorMapViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndoorMapViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
 		DB626C4425D5BAE0007BCAF5 /* GetMobileUserUserCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetMobileUserUserCase.swift; path = iOS_Emergency_Indoor_Nav/GetMobileUserUserCase.swift; sourceTree = SOURCE_ROOT; };
 		DB626CBB25D724D0007BCAF5 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		DB626CBC25D724D0007BCAF5 /* IMDFDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMDFDecoder.swift; sourceTree = "<group>"; };
@@ -105,7 +109,7 @@
 		DBAD892D25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeviceTokenIdUseCase.swift; sourceTree = "<group>"; };
 		DBC8EDB225E9A82A009112F3 /* SafeRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeRegion.swift; sourceTree = "<group>"; };
 		DBC8EDBA25E9AA0D009112F3 /* SafeRegions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SafeRegions.plist; sourceTree = "<group>"; };
-		DBC8EDBF25E9B4B7009112F3 /* R-C1 to exit.gpx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "R-C1 to exit.gpx"; sourceTree = SOURCE_ROOT; };
+		DBC8EDBF25E9B4B7009112F3 /* R-C1 to exit.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "R-C1 to exit.gpx"; sourceTree = SOURCE_ROOT; };
 		DBCD388525C8BC420015CD3A /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		DBCD388625C8BC420015CD3A /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
 		DBCD388D25C8C63D0015CD3A /* MobileUser+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MobileUser+Schema.swift"; path = "amplify/generated/models/MobileUser+Schema.swift"; sourceTree = SOURCE_ROOT; };
@@ -189,6 +193,8 @@
 				DB626CBB25D724D0007BCAF5 /* Styles.swift */,
 				DB626CBC25D724D0007BCAF5 /* IMDFDecoder.swift */,
 				DB626CBD25D724D0007BCAF5 /* IndoorMapViewController.swift */,
+				DB57B6A925F0745B00D17DFC /* IndoorMapViewController+MKMapViewDelegate.swift */,
+				DB57B6A125F072FF00D17DFC /* IndoorMapViewController+LocationManagerDelegate.swift */,
 				DB626CCC25D724D0007BCAF5 /* Views */,
 				DB626CD025D724D0007BCAF5 /* IMDFModel */,
 			);
@@ -590,10 +596,12 @@
 				DBCD389225C8C63D0015CD3A /* MobileUser.swift in Sources */,
 				DB626CEB25D724D0007BCAF5 /* LabelAnnotationView.swift in Sources */,
 				DB7FD07B25CB95A900052FA3 /* CreateUserUseCase.swift in Sources */,
+				DB57B6AA25F0745B00D17DFC /* IndoorMapViewController+MKMapViewDelegate.swift in Sources */,
 				DB626CF325D724D0007BCAF5 /* Opening.swift in Sources */,
 				DB626C4525D5BAE0007BCAF5 /* GetMobileUserUserCase.swift in Sources */,
 				DB626CDA25D724D0007BCAF5 /* Styles.swift in Sources */,
 				DB626CF125D724D0007BCAF5 /* Occupant.swift in Sources */,
+				DB57B6A225F072FF00D17DFC /* IndoorMapViewController+LocationManagerDelegate.swift in Sources */,
 				DB626CED25D724D0007BCAF5 /* Anchor.swift in Sources */,
 				DBCD38BC25C8F13B0015CD3A /* UpdateLocationUseCase.swift in Sources */,
 				DB626CF025D724D0007BCAF5 /* Amenity.swift in Sources */,
