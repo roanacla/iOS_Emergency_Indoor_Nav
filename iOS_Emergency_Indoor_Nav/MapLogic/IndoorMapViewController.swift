@@ -8,6 +8,8 @@
 import UIKit
 import CoreLocation
 import MapKit
+import Combine
+import Amplify
 
 class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   //MARK: - IBOutlets
@@ -18,6 +20,8 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   //MARK: - Properties
   var currentLocation: CLLocation?
   var safeRegions: [SafeRegion] = []
+  var beacons: [Beacon] = []
+  private var subscriptions = Set<AnyCancellable>()
   
   var venue: Venue?
   var levels: [Level] = []
@@ -85,6 +89,11 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     setupLevelPicker()
     
     loadSafeRegions()
+    loadBeacons()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5) { // change 2 to desired number of seconds
+      self.updateLocation()?
+        .store(in: &self.subscriptions)
+    }
     
   }
   
@@ -101,13 +110,32 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
 //    mapView.addAnnotation(newPin)
 //  }
   
+  deinit {
+    subscriptions.removeAll()
+  }
+  
+  //MARK: - IBActions
   @IBAction func showRoute(_ sender: Any) {
     loadDirections()
   }
   
   //MARK: - Functions
+  
+  func loadBeacons() {
+    guard let entries = loadPlist(for: "Beacons") else { fatalError("Unable to load data") }
+    
+    for property in entries {
+      guard let name = property["Name"] as? String,
+            let latitude = property["Latitude"] as? NSNumber,
+            let longitude = property["Longitude"] as? NSNumber else { fatalError("Error reading data") }
+      
+      let beacon = Beacon(name: name, latitude: latitude.doubleValue, longitude: longitude.doubleValue)
+      beacons.append(beacon)
+    }
+  }
+  
   func loadSafeRegions() {
-    guard let entries = loadSafeRegionsPlist() else { fatalError("Unable to load data") }
+    guard let entries = loadPlist(for: "SafeRegions") else { fatalError("Unable to load data") }
     
     for property in entries {
       guard let name = property["Name"] as? String,
@@ -119,8 +147,8 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     }
   }
   
-  private func loadSafeRegionsPlist() -> [[String: Any]]? {
-    guard let plistUrl = Bundle.main.url(forResource: "SafeRegions", withExtension: "plist"),
+  private func loadPlist(for filename: String) -> [[String: Any]]? {
+    guard let plistUrl = Bundle.main.url(forResource: filename, withExtension: "plist"),
       let plistData = try? Data(contentsOf: plistUrl) else { return nil }
     var placedEntries: [[String: Any]]? = nil
     
@@ -153,6 +181,18 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     let polygon = MKPolygon(coordinates: &points, count: points.count)
     mapView.addOverlay(polygon)
     
+  }
+  
+  func updateLocation() -> AnyCancellable? {
+    let range = 0..<beacons.count
+    let randomBeacon = range.randomElement()!
+    let beacon = beacons[randomBeacon]
+    let updateLocationUseCase = UpdateLocationUseCase(userID: UserDefaultsData.userID,
+                                                      tokenID: UserDefaultsData.deviceTokenId,
+                                                      location: beacon.name,
+                                                      remoteAPI: MobileUserAmplifyAPI())
+
+    return updateLocationUseCase.start()
   }
   
   // MARK: - LevelPickerDelegate
