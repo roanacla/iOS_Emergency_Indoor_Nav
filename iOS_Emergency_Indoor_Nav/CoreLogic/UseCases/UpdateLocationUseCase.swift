@@ -22,6 +22,6 @@ public class UpdateLocationUseCase: UseCase {
   }
   
   public func start() -> AnyCancellable {
-    return remoteAPI.updateLocation(userID: userID ,tokenID: tokenID, location: location)
+    return remoteAPI.updateLocation(userID: userID, location: location)
   }
 }

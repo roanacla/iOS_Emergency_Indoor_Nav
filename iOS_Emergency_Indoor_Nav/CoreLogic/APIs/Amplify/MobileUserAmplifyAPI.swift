@@ -9,6 +9,36 @@ import Foundation
 import Amplify
 import Combine
 
+extension GraphQLRequest {
+  static func updateMobileUserLocation(id: String, location: String) -> GraphQLRequest<JSONValue> {
+    let document = """
+        mutation updateMobileUserLocation($id: ID!, $location: String!) {
+          updateMobileUser(input: {id: $id, location: $location}) {
+            location
+          }
+        }
+        """
+    return GraphQLRequest<JSONValue>(document: document,
+                                     variables: ["id": id,
+                                                 "location": location],
+                                     responseType: JSONValue.self)
+  }
+  
+  static func updateMobileUserToken(id: String, token: String) -> GraphQLRequest<JSONValue> {
+    let document = """
+      mutation updateMobileUserToken($id: ID!, $token: String!) {
+        updateMobileUser(input: {id: $id, deviceTokenId: $token}) {
+          location
+        }
+      }
+      """
+    return GraphQLRequest<JSONValue>(document: document,
+                                     variables: ["id": id,
+                                                 "token": token],
+                                     responseType: JSONValue.self)
+  }
+}
+
 public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
   
   func create(userID: String, tokenID: String) -> AnyCancellable {
@@ -70,9 +100,8 @@ public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
     return publisher
   }
   
-  func updateLocation(userID: String, tokenID: String, location: String) -> AnyCancellable {
-    let mobileUser = MobileUser(id: userID, deviceTokenId: tokenID, location: location)
-    let sink = Amplify.API.mutate(request: .update(mobileUser))
+  func updateLocation(userID: String, location: String) -> AnyCancellable {
+    return Amplify.API.mutate(request: .updateMobileUserLocation(id: userID, location: location))
       .resultPublisher
       .sink {
         if case let .failure(error) = $0 {
@@ -87,12 +116,11 @@ public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
           print("🔴 Got failed result updating device location \(error.errorDescription)")
         }
       }
-    return sink
   }
   
   func updateDeviceTokenId(userID: String, newToken: String) -> AnyCancellable {
-    let mobileUser = MobileUser(id: userID, deviceTokenId: newToken)
-    let sink = Amplify.API.mutate(request: .update(mobileUser))
+//    let mobileUser = MobileUser(id: userID, deviceTokenId: newToken)
+    let sink = Amplify.API.mutate(request: .updateMobileUserToken(id: userID, token: newToken))
       .resultPublisher
       .sink {
         if case let .failure(error) = $0 {
