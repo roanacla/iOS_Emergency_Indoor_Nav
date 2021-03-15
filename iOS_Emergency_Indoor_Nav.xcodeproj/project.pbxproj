@@ -35,6 +35,45 @@
 		DB7FD07B25CB95A900052FA3 /* CreateUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FD07A25CB95A900052FA3 /* CreateUserUseCase.swift */; };
 		DBAD892925CA37DA00FC0D4C /* NameSpaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD892825CA37DA00FC0D4C /* NameSpaces.swift */; };
 		DBAD892E25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD892D25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift */; };
+		DBC4C4FE26001A6F006957AD /* R-N1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4D726001A6D006957AD /* R-N1.gpx */; };
+		DBC4C4FF26001A6F006957AD /* W-4.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4D826001A6D006957AD /* W-4.gpx */; };
+		DBC4C50026001A6F006957AD /* W-1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4D926001A6D006957AD /* W-1.gpx */; };
+		DBC4C50126001A6F006957AD /* W-8.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4DA26001A6D006957AD /* W-8.gpx */; };
+		DBC4C50226001A6F006957AD /* R-F1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4DB26001A6D006957AD /* R-F1.gpx */; };
+		DBC4C50326001A6F006957AD /* W-18.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4DC26001A6D006957AD /* W-18.gpx */; };
+		DBC4C50426001A6F006957AD /* R-M3.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4DD26001A6D006957AD /* R-M3.gpx */; };
+		DBC4C50526001A6F006957AD /* W-20.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4DE26001A6D006957AD /* W-20.gpx */; };
+		DBC4C50626001A6F006957AD /* W-12.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4DF26001A6D006957AD /* W-12.gpx */; };
+		DBC4C50726001A6F006957AD /* W-21.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4E026001A6D006957AD /* W-21.gpx */; };
+		DBC4C50826001A6F006957AD /* R-I1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4E126001A6E006957AD /* R-I1.gpx */; };
+		DBC4C50926001A6F006957AD /* W-23.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4E226001A6E006957AD /* W-23.gpx */; };
+		DBC4C50A26001A6F006957AD /* W-15.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4E326001A6E006957AD /* W-15.gpx */; };
+		DBC4C50B26001A6F006957AD /* R-B2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4E426001A6E006957AD /* R-B2.gpx */; };
+		DBC4C50C26001A6F006957AD /* W-3.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4E526001A6E006957AD /* W-3.gpx */; };
+		DBC4C50D26001A6F006957AD /* R-A1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4E626001A6E006957AD /* R-A1.gpx */; };
+		DBC4C50E26001A6F006957AD /* W-10.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4E726001A6E006957AD /* W-10.gpx */; };
+		DBC4C50F26001A6F006957AD /* R-H1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4E826001A6E006957AD /* R-H1.gpx */; };
+		DBC4C51026001A6F006957AD /* R-D2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4E926001A6E006957AD /* R-D2.gpx */; };
+		DBC4C51126001A6F006957AD /* R-C2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4EA26001A6E006957AD /* R-C2.gpx */; };
+		DBC4C51226001A6F006957AD /* R-B1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4EB26001A6E006957AD /* R-B1.gpx */; };
+		DBC4C51326001A6F006957AD /* W-5.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4EC26001A6E006957AD /* W-5.gpx */; };
+		DBC4C51426001A6F006957AD /* W-22.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4ED26001A6E006957AD /* W-22.gpx */; };
+		DBC4C51526001A6F006957AD /* W-19.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4EE26001A6E006957AD /* W-19.gpx */; };
+		DBC4C51626001A6F006957AD /* R-D1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4EF26001A6E006957AD /* R-D1.gpx */; };
+		DBC4C51726001A6F006957AD /* W-2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4F026001A6E006957AD /* W-2.gpx */; };
+		DBC4C51826001A6F006957AD /* R-M2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4F126001A6E006957AD /* R-M2.gpx */; };
+		DBC4C51926001A6F006957AD /* R-C1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4F226001A6E006957AD /* R-C1.gpx */; };
+		DBC4C51A26001A6F006957AD /* R-E1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4F326001A6E006957AD /* R-E1.gpx */; };
+		DBC4C51B26001A6F006957AD /* W-7.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4F426001A6E006957AD /* W-7.gpx */; };
+		DBC4C51C26001A6F006957AD /* R-G1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4F526001A6E006957AD /* R-G1.gpx */; };
+		DBC4C51D26001A6F006957AD /* R-M1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4F626001A6E006957AD /* R-M1.gpx */; };
+		DBC4C51E26001A6F006957AD /* W-9.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4F726001A6E006957AD /* W-9.gpx */; };
+		DBC4C51F26001A6F006957AD /* W-13.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4F826001A6F006957AD /* W-13.gpx */; };
+		DBC4C52026001A6F006957AD /* R-A2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4F926001A6F006957AD /* R-A2.gpx */; };
+		DBC4C52126001A6F006957AD /* W-14.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4FA26001A6F006957AD /* W-14.gpx */; };
+		DBC4C52226001A6F006957AD /* W-6.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4FB26001A6F006957AD /* W-6.gpx */; };
+		DBC4C52326001A6F006957AD /* W-17.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4FC26001A6F006957AD /* W-17.gpx */; };
+		DBC4C52426001A6F006957AD /* W-11.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4FD26001A6F006957AD /* W-11.gpx */; };
 		DBC8EDB325E9A82A009112F3 /* SafeRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8EDB225E9A82A009112F3 /* SafeRegion.swift */; };
 		DBC8EDBB25E9AA0D009112F3 /* SafeRegions.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBC8EDBA25E9AA0D009112F3 /* SafeRegions.plist */; };
 		DBC8EDC025E9B4B7009112F3 /* R-C1 to exit.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC8EDBF25E9B4B7009112F3 /* R-C1 to exit.gpx */; };
@@ -111,6 +150,45 @@
 		DBAD892125CA318D00FC0D4C /* iOS_Emergency_Indoor_Nav.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS_Emergency_Indoor_Nav.entitlements; sourceTree = "<group>"; };
 		DBAD892825CA37DA00FC0D4C /* NameSpaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSpaces.swift; sourceTree = "<group>"; };
 		DBAD892D25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeviceTokenIdUseCase.swift; sourceTree = "<group>"; };
+		DBC4C4D726001A6D006957AD /* R-N1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-N1.gpx"; sourceTree = "<group>"; };
+		DBC4C4D826001A6D006957AD /* W-4.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-4.gpx"; sourceTree = "<group>"; };
+		DBC4C4D926001A6D006957AD /* W-1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-1.gpx"; sourceTree = "<group>"; };
+		DBC4C4DA26001A6D006957AD /* W-8.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-8.gpx"; sourceTree = "<group>"; };
+		DBC4C4DB26001A6D006957AD /* R-F1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-F1.gpx"; sourceTree = "<group>"; };
+		DBC4C4DC26001A6D006957AD /* W-18.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-18.gpx"; sourceTree = "<group>"; };
+		DBC4C4DD26001A6D006957AD /* R-M3.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-M3.gpx"; sourceTree = "<group>"; };
+		DBC4C4DE26001A6D006957AD /* W-20.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-20.gpx"; sourceTree = "<group>"; };
+		DBC4C4DF26001A6D006957AD /* W-12.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-12.gpx"; sourceTree = "<group>"; };
+		DBC4C4E026001A6D006957AD /* W-21.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-21.gpx"; sourceTree = "<group>"; };
+		DBC4C4E126001A6E006957AD /* R-I1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-I1.gpx"; sourceTree = "<group>"; };
+		DBC4C4E226001A6E006957AD /* W-23.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-23.gpx"; sourceTree = "<group>"; };
+		DBC4C4E326001A6E006957AD /* W-15.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-15.gpx"; sourceTree = "<group>"; };
+		DBC4C4E426001A6E006957AD /* R-B2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-B2.gpx"; sourceTree = "<group>"; };
+		DBC4C4E526001A6E006957AD /* W-3.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-3.gpx"; sourceTree = "<group>"; };
+		DBC4C4E626001A6E006957AD /* R-A1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-A1.gpx"; sourceTree = "<group>"; };
+		DBC4C4E726001A6E006957AD /* W-10.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-10.gpx"; sourceTree = "<group>"; };
+		DBC4C4E826001A6E006957AD /* R-H1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-H1.gpx"; sourceTree = "<group>"; };
+		DBC4C4E926001A6E006957AD /* R-D2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-D2.gpx"; sourceTree = "<group>"; };
+		DBC4C4EA26001A6E006957AD /* R-C2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-C2.gpx"; sourceTree = "<group>"; };
+		DBC4C4EB26001A6E006957AD /* R-B1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-B1.gpx"; sourceTree = "<group>"; };
+		DBC4C4EC26001A6E006957AD /* W-5.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-5.gpx"; sourceTree = "<group>"; };
+		DBC4C4ED26001A6E006957AD /* W-22.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-22.gpx"; sourceTree = "<group>"; };
+		DBC4C4EE26001A6E006957AD /* W-19.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-19.gpx"; sourceTree = "<group>"; };
+		DBC4C4EF26001A6E006957AD /* R-D1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-D1.gpx"; sourceTree = "<group>"; };
+		DBC4C4F026001A6E006957AD /* W-2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-2.gpx"; sourceTree = "<group>"; };
+		DBC4C4F126001A6E006957AD /* R-M2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-M2.gpx"; sourceTree = "<group>"; };
+		DBC4C4F226001A6E006957AD /* R-C1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-C1.gpx"; sourceTree = "<group>"; };
+		DBC4C4F326001A6E006957AD /* R-E1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-E1.gpx"; sourceTree = "<group>"; };
+		DBC4C4F426001A6E006957AD /* W-7.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-7.gpx"; sourceTree = "<group>"; };
+		DBC4C4F526001A6E006957AD /* R-G1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-G1.gpx"; sourceTree = "<group>"; };
+		DBC4C4F626001A6E006957AD /* R-M1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-M1.gpx"; sourceTree = "<group>"; };
+		DBC4C4F726001A6E006957AD /* W-9.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-9.gpx"; sourceTree = "<group>"; };
+		DBC4C4F826001A6F006957AD /* W-13.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-13.gpx"; sourceTree = "<group>"; };
+		DBC4C4F926001A6F006957AD /* R-A2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-A2.gpx"; sourceTree = "<group>"; };
+		DBC4C4FA26001A6F006957AD /* W-14.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-14.gpx"; sourceTree = "<group>"; };
+		DBC4C4FB26001A6F006957AD /* W-6.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-6.gpx"; sourceTree = "<group>"; };
+		DBC4C4FC26001A6F006957AD /* W-17.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-17.gpx"; sourceTree = "<group>"; };
+		DBC4C4FD26001A6F006957AD /* W-11.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-11.gpx"; sourceTree = "<group>"; };
 		DBC8EDB225E9A82A009112F3 /* SafeRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeRegion.swift; sourceTree = "<group>"; };
 		DBC8EDBA25E9AA0D009112F3 /* SafeRegions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SafeRegions.plist; sourceTree = "<group>"; };
 		DBC8EDBF25E9B4B7009112F3 /* R-C1 to exit.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "R-C1 to exit.gpx"; path = "iOS_Emergency_Indoor_Nav/R-C1 to exit.gpx"; sourceTree = SOURCE_ROOT; };
@@ -234,7 +312,46 @@
 		DBC4C4D326000FC4006957AD /* Simulator Locations */ = {
 			isa = PBXGroup;
 			children = (
+				DBC4C4E626001A6E006957AD /* R-A1.gpx */,
+				DBC4C4F926001A6F006957AD /* R-A2.gpx */,
+				DBC4C4EB26001A6E006957AD /* R-B1.gpx */,
+				DBC4C4E426001A6E006957AD /* R-B2.gpx */,
+				DBC4C4F226001A6E006957AD /* R-C1.gpx */,
+				DBC4C4EA26001A6E006957AD /* R-C2.gpx */,
+				DBC4C4EF26001A6E006957AD /* R-D1.gpx */,
+				DBC4C4E926001A6E006957AD /* R-D2.gpx */,
+				DBC4C4F326001A6E006957AD /* R-E1.gpx */,
+				DBC4C4DB26001A6D006957AD /* R-F1.gpx */,
+				DBC4C4F526001A6E006957AD /* R-G1.gpx */,
+				DBC4C4E826001A6E006957AD /* R-H1.gpx */,
+				DBC4C4E126001A6E006957AD /* R-I1.gpx */,
+				DBC4C4F626001A6E006957AD /* R-M1.gpx */,
+				DBC4C4F126001A6E006957AD /* R-M2.gpx */,
+				DBC4C4DD26001A6D006957AD /* R-M3.gpx */,
+				DBC4C4D726001A6D006957AD /* R-N1.gpx */,
+				DBC4C4D926001A6D006957AD /* W-1.gpx */,
+				DBC4C4F026001A6E006957AD /* W-2.gpx */,
+				DBC4C4E526001A6E006957AD /* W-3.gpx */,
+				DBC4C4D826001A6D006957AD /* W-4.gpx */,
+				DBC4C4EC26001A6E006957AD /* W-5.gpx */,
+				DBC4C4FB26001A6F006957AD /* W-6.gpx */,
+				DBC4C4F426001A6E006957AD /* W-7.gpx */,
+				DBC4C4DA26001A6D006957AD /* W-8.gpx */,
+				DBC4C4F726001A6E006957AD /* W-9.gpx */,
+				DBC4C4E726001A6E006957AD /* W-10.gpx */,
+				DBC4C4FD26001A6F006957AD /* W-11.gpx */,
+				DBC4C4DF26001A6D006957AD /* W-12.gpx */,
+				DBC4C4F826001A6F006957AD /* W-13.gpx */,
+				DBC4C4FA26001A6F006957AD /* W-14.gpx */,
+				DBC4C4E326001A6E006957AD /* W-15.gpx */,
 				DB626D0825DC66EE007BCAF5 /* W-16.gpx */,
+				DBC4C4FC26001A6F006957AD /* W-17.gpx */,
+				DBC4C4DC26001A6D006957AD /* W-18.gpx */,
+				DBC4C4EE26001A6E006957AD /* W-19.gpx */,
+				DBC4C4DE26001A6D006957AD /* W-20.gpx */,
+				DBC4C4E026001A6D006957AD /* W-21.gpx */,
+				DBC4C4ED26001A6E006957AD /* W-22.gpx */,
+				DBC4C4E226001A6E006957AD /* W-23.gpx */,
 			);
 			path = "Simulator Locations";
 			sourceTree = "<group>";
@@ -464,16 +581,55 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC4C51D26001A6F006957AD /* R-M1.gpx in Resources */,
+				DBC4C51E26001A6F006957AD /* W-9.gpx in Resources */,
+				DBC4C50426001A6F006957AD /* R-M3.gpx in Resources */,
+				DBC4C51726001A6F006957AD /* W-2.gpx in Resources */,
+				DBC4C51A26001A6F006957AD /* R-E1.gpx in Resources */,
 				DBCD388725C8BC420015CD3A /* awsconfiguration.json in Resources */,
+				DBC4C50E26001A6F006957AD /* W-10.gpx in Resources */,
+				DBC4C4FF26001A6F006957AD /* W-4.gpx in Resources */,
 				DBE0C9DA25C26F48009B9CB0 /* LaunchScreen.storyboard in Resources */,
+				DBC4C52026001A6F006957AD /* R-A2.gpx in Resources */,
+				DBC4C50026001A6F006957AD /* W-1.gpx in Resources */,
 				DB626D0925DC66EE007BCAF5 /* W-16.gpx in Resources */,
+				DBC4C50526001A6F006957AD /* W-20.gpx in Resources */,
+				DBC4C4FE26001A6F006957AD /* R-N1.gpx in Resources */,
+				DBC4C51626001A6F006957AD /* R-D1.gpx in Resources */,
+				DBC4C51426001A6F006957AD /* W-22.gpx in Resources */,
 				DB57B6B725F083A300D17DFC /* Beacons.plist in Resources */,
+				DBC4C52426001A6F006957AD /* W-11.gpx in Resources */,
 				DBC8EDC025E9B4B7009112F3 /* R-C1 to exit.gpx in Resources */,
 				DBCD388825C8BC420015CD3A /* amplifyconfiguration.json in Resources */,
+				DBC4C51026001A6F006957AD /* R-D2.gpx in Resources */,
+				DBC4C51B26001A6F006957AD /* W-7.gpx in Resources */,
+				DBC4C51C26001A6F006957AD /* R-G1.gpx in Resources */,
 				DB626D0425DC66E6007BCAF5 /* San Jose Convention Center.gpx in Resources */,
+				DBC4C50726001A6F006957AD /* W-21.gpx in Resources */,
+				DBC4C51326001A6F006957AD /* W-5.gpx in Resources */,
+				DBC4C51526001A6F006957AD /* W-19.gpx in Resources */,
+				DBC4C50626001A6F006957AD /* W-12.gpx in Resources */,
+				DBC4C51926001A6F006957AD /* R-C1.gpx in Resources */,
+				DBC4C51F26001A6F006957AD /* W-13.gpx in Resources */,
+				DBC4C50326001A6F006957AD /* W-18.gpx in Resources */,
+				DBC4C52226001A6F006957AD /* W-6.gpx in Resources */,
+				DBC4C50A26001A6F006957AD /* W-15.gpx in Resources */,
 				DBE0C9D725C26F48009B9CB0 /* Assets.xcassets in Resources */,
+				DBC4C50C26001A6F006957AD /* W-3.gpx in Resources */,
+				DBC4C51826001A6F006957AD /* R-M2.gpx in Resources */,
+				DBC4C50D26001A6F006957AD /* R-A1.gpx in Resources */,
+				DBC4C50F26001A6F006957AD /* R-H1.gpx in Resources */,
+				DBC4C50B26001A6F006957AD /* R-B2.gpx in Resources */,
+				DBC4C51226001A6F006957AD /* R-B1.gpx in Resources */,
+				DBC4C51126001A6F006957AD /* R-C2.gpx in Resources */,
+				DBC4C50226001A6F006957AD /* R-F1.gpx in Resources */,
 				DBC8EDBB25E9AA0D009112F3 /* SafeRegions.plist in Resources */,
+				DBC4C50826001A6F006957AD /* R-I1.gpx in Resources */,
+				DBC4C50126001A6F006957AD /* W-8.gpx in Resources */,
+				DBC4C52326001A6F006957AD /* W-17.gpx in Resources */,
+				DBC4C50926001A6F006957AD /* W-23.gpx in Resources */,
 				DB626CFF25D72877007BCAF5 /* IMDFData in Resources */,
+				DBC4C52126001A6F006957AD /* W-14.gpx in Resources */,
 				DBE0C9D525C26F46009B9CB0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
