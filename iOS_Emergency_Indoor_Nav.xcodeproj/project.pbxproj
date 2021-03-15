@@ -31,7 +31,7 @@
 		DB626CF425D724D0007BCAF5 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB626CD925D724D0007BCAF5 /* Level.swift */; };
 		DB626CFF25D72877007BCAF5 /* IMDFData in Resources */ = {isa = PBXBuildFile; fileRef = DB626CFE25D72877007BCAF5 /* IMDFData */; };
 		DB626D0425DC66E6007BCAF5 /* San Jose Convention Center.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DB626D0325DC66E6007BCAF5 /* San Jose Convention Center.gpx */; };
-		DB626D0925DC66EE007BCAF5 /* Custom.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DB626D0825DC66EE007BCAF5 /* Custom.gpx */; };
+		DB626D0925DC66EE007BCAF5 /* W-16.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DB626D0825DC66EE007BCAF5 /* W-16.gpx */; };
 		DB7FD07B25CB95A900052FA3 /* CreateUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FD07A25CB95A900052FA3 /* CreateUserUseCase.swift */; };
 		DBAD892925CA37DA00FC0D4C /* NameSpaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD892825CA37DA00FC0D4C /* NameSpaces.swift */; };
 		DBAD892E25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD892D25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift */; };
@@ -106,14 +106,14 @@
 		DB626CD925D724D0007BCAF5 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		DB626CFE25D72877007BCAF5 /* IMDFData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IMDFData; sourceTree = "<group>"; };
 		DB626D0325DC66E6007BCAF5 /* San Jose Convention Center.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "San Jose Convention Center.gpx"; sourceTree = SOURCE_ROOT; };
-		DB626D0825DC66EE007BCAF5 /* Custom.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Custom.gpx; sourceTree = SOURCE_ROOT; };
+		DB626D0825DC66EE007BCAF5 /* W-16.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "W-16.gpx"; path = "iOS_Emergency_Indoor_Nav/Simulator Locations/W-16.gpx"; sourceTree = SOURCE_ROOT; };
 		DB7FD07A25CB95A900052FA3 /* CreateUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserUseCase.swift; sourceTree = "<group>"; };
 		DBAD892125CA318D00FC0D4C /* iOS_Emergency_Indoor_Nav.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS_Emergency_Indoor_Nav.entitlements; sourceTree = "<group>"; };
 		DBAD892825CA37DA00FC0D4C /* NameSpaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameSpaces.swift; sourceTree = "<group>"; };
 		DBAD892D25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeviceTokenIdUseCase.swift; sourceTree = "<group>"; };
 		DBC8EDB225E9A82A009112F3 /* SafeRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeRegion.swift; sourceTree = "<group>"; };
 		DBC8EDBA25E9AA0D009112F3 /* SafeRegions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SafeRegions.plist; sourceTree = "<group>"; };
-		DBC8EDBF25E9B4B7009112F3 /* R-C1 to exit.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "R-C1 to exit.gpx"; sourceTree = SOURCE_ROOT; };
+		DBC8EDBF25E9B4B7009112F3 /* R-C1 to exit.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "R-C1 to exit.gpx"; path = "iOS_Emergency_Indoor_Nav/R-C1 to exit.gpx"; sourceTree = SOURCE_ROOT; };
 		DBCD388525C8BC420015CD3A /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		DBCD388625C8BC420015CD3A /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
 		DBCD388D25C8C63D0015CD3A /* MobileUser+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MobileUser+Schema.swift"; path = "amplify/generated/models/MobileUser+Schema.swift"; sourceTree = SOURCE_ROOT; };
@@ -231,6 +231,14 @@
 			path = IMDFModel;
 			sourceTree = "<group>";
 		};
+		DBC4C4D326000FC4006957AD /* Simulator Locations */ = {
+			isa = PBXGroup;
+			children = (
+				DB626D0825DC66EE007BCAF5 /* W-16.gpx */,
+			);
+			path = "Simulator Locations";
+			sourceTree = "<group>";
+		};
 		DBCD388C25C8C62C0015CD3A /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,8 +313,8 @@
 		DBE0C9CC25C26F46009B9CB0 /* iOS_Emergency_Indoor_Nav */ = {
 			isa = PBXGroup;
 			children = (
+				DBC4C4D326000FC4006957AD /* Simulator Locations */,
 				DBC8EDBF25E9B4B7009112F3 /* R-C1 to exit.gpx */,
-				DB626D0825DC66EE007BCAF5 /* Custom.gpx */,
 				DB626D0325DC66E6007BCAF5 /* San Jose Convention Center.gpx */,
 				DBAD892125CA318D00FC0D4C /* iOS_Emergency_Indoor_Nav.entitlements */,
 				DBCD38B425C8EC910015CD3A /* CoreLogic */,
@@ -458,7 +466,7 @@
 			files = (
 				DBCD388725C8BC420015CD3A /* awsconfiguration.json in Resources */,
 				DBE0C9DA25C26F48009B9CB0 /* LaunchScreen.storyboard in Resources */,
-				DB626D0925DC66EE007BCAF5 /* Custom.gpx in Resources */,
+				DB626D0925DC66EE007BCAF5 /* W-16.gpx in Resources */,
 				DB57B6B725F083A300D17DFC /* Beacons.plist in Resources */,
 				DBC8EDC025E9B4B7009112F3 /* R-C1 to exit.gpx in Resources */,
 				DBCD388825C8BC420015CD3A /* amplifyconfiguration.json in Resources */,
