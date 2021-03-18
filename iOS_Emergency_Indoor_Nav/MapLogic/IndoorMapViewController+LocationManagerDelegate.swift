@@ -7,6 +7,7 @@
 import CoreLocation
 import Foundation
 import UIKit
+import MapKit
 //MARK: - LocationManager Delegate
 extension IndoorMapViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -48,9 +49,10 @@ extension IndoorMapViewController: CLLocationManagerDelegate {
   private func activateLocationServices() {
     if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
       for safeRegion in safeRegions {
-        let region = CLCircularRegion(center: safeRegion.location.coordinate, radius: 5, identifier: safeRegion.name)
+        let region = CLCircularRegion(center: safeRegion.location.coordinate, radius: 10.0, identifier: safeRegion.name)
         region.notifyOnEntry = true
         locationManager.startMonitoring(for: region)
+        mapView.addOverlay(MKCircle(center: safeRegion.location.coordinate, radius: 10.0))
       }
     }
     locationManager.startUpdatingLocation()

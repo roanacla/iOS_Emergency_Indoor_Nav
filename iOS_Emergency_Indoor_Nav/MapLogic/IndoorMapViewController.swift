@@ -20,7 +20,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   //MARK: - Properties
   var currentLocation: CLLocation?
   var safeRegions: [SafeRegion] = []
-  var beacons: [Beacon] = []
+  var beaconsDict: [String: Beacon] = [:]
   private var subscriptions = Set<AnyCancellable>()
   
   var venue: Venue?
@@ -116,7 +116,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   
   //MARK: - IBActions
   @IBAction func showRoute(_ sender: Any) {
-    loadDirections()
+    loadDirections(path: [])
   }
   
   //MARK: - Functions
@@ -130,7 +130,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
             let longitude = property["Longitude"] as? NSNumber else { fatalError("Error reading data") }
       
       let beacon = Beacon(name: name, latitude: latitude.doubleValue, longitude: longitude.doubleValue)
-      beacons.append(beacon)
+      beaconsDict[beacon.name] = beacon
     }
   }
   
@@ -160,23 +160,16 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     return placedEntries
   }
   
-  func loadDirections() {
-    //    guard let start = currentLocation else { return }
+  func loadDirections(path: [String]) { //e.i. ["W-10", "W-12", "W-15", "W-16"]
+    guard !path.isEmpty else { return }
     var points: [CLLocationCoordinate2D] = []
-//    points.append(CLLocationCoordinate2DMake(37.328249, -121.889695))
-//    points.append(CLLocationCoordinate2DMake(37.328954, -121.890237))
-//    points.append(CLLocationCoordinate2DMake(37.329225, -121.889656))
-//    points.append(CLLocationCoordinate2DMake(37.329155, -121.889556))
-//    points.append(CLLocationCoordinate2DMake(37.329655, -121.888656))
-//    points.append(CLLocationCoordinate2DMake(37.33, -121.888950))
-
-    points.append(CLLocationCoordinate2DMake(37.329244889480464, -121.88843239162776))
-    points.append(CLLocationCoordinate2DMake(37.32946280543797, -121.8888624377502))
-    points.append(CLLocationCoordinate2DMake(37.32961956777538, -121.88867075405378))
-    points.append(CLLocationCoordinate2DMake(37.329776817527076, -121.88878094368332))
-//    points.append(CLLocationCoordinate2DMake(37.329655, -121.888656))
-    points.append(CLLocationCoordinate2DMake(37.33, -121.888950))
     
+    for node in path {
+      if let beacon = beaconsDict[node] {
+        points.append(CLLocationCoordinate2DMake(beacon.location.coordinate.latitude,
+                                                 beacon.location.coordinate.longitude))
+      }
+    }
     
     let polygon = MKPolygon(coordinates: &points, count: points.count)
     mapView.addOverlay(polygon)
@@ -184,12 +177,10 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   }
   
   func updateLocation() -> AnyCancellable? {
-    let range = 0..<beacons.count
-    let randomBeacon = range.randomElement()!
-    let beacon = beacons[randomBeacon]
+    guard let beacon = beaconsDict.randomElement() else { return nil }
     let updateLocationUseCase = UpdateLocationUseCase(userID: UserDefaultsData.userID,
                                                       tokenID: UserDefaultsData.deviceTokenId,
-                                                      location: beacon.name,
+                                                      location: beacon.value.name,
                                                       remoteAPI: MobileUserAmplifyAPI())
 
     return updateLocationUseCase.start()

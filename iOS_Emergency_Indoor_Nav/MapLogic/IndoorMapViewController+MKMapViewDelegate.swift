@@ -19,6 +19,12 @@ extension IndoorMapViewController: MKMapViewDelegate {
         polyLine.strokeColor = UIColor.darkGray
         polyLine.lineWidth = 4.0
         return polyLine
+      } else if overlay is MKCircle {
+        let circleRenderer = MKCircleRenderer(overlay: overlay)
+        circleRenderer.lineWidth = 1.0
+        circleRenderer.strokeColor = .purple
+        circleRenderer.fillColor = UIColor.purple.withAlphaComponent(0.4)
+        return circleRenderer
       } else {
         
         return MKOverlayRenderer(overlay: overlay)

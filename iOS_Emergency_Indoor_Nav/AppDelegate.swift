@@ -91,18 +91,20 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     _ center: UNUserNotificationCenter,
     didReceive response: UNNotificationResponse,
     withCompletionHandler completionHandler: @escaping () -> Void) {
-
-    let userInfo = response.notification.request.content.userInfo
-    let typeOfGun = userInfo["typeOfGun"] as! String
-    print("🟢🟢")
-    print(typeOfGun) //[R-M1, W-1, w,14}
     guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else {
       return
     }
-
-    if let vc = rootViewController as? IndoorMapViewController {
-//      vc.displayImage(typeOfGun: typeOfGun)
-      vc.loadDirections()
+    
+    let userInfo = response.notification.request.content.userInfo
+    if let notification = userInfo["aps"] as? Dictionary<String,String> {
+      if let remoteCommandjson = notification["alert"] {
+        let jsonData = remoteCommandjson.data(using: .utf8)!
+        let decoder = JSONDecoder()
+        let remoteCommands = try! decoder.decode(RemoteCommands.self, from: jsonData)
+        if let vc = rootViewController as? IndoorMapViewController {
+          vc.loadDirections(path: remoteCommands.shortestPath)
+        }
+      }
     }
 
     completionHandler()

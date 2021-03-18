@@ -74,6 +74,7 @@
 		DBC4C52226001A6F006957AD /* W-6.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4FB26001A6F006957AD /* W-6.gpx */; };
 		DBC4C52326001A6F006957AD /* W-17.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4FC26001A6F006957AD /* W-17.gpx */; };
 		DBC4C52426001A6F006957AD /* W-11.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4FD26001A6F006957AD /* W-11.gpx */; };
+		DBC4C52C26001FAC006957AD /* RemoteCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC4C52B26001FAC006957AD /* RemoteCommands.swift */; };
 		DBC8EDB325E9A82A009112F3 /* SafeRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8EDB225E9A82A009112F3 /* SafeRegion.swift */; };
 		DBC8EDBB25E9AA0D009112F3 /* SafeRegions.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBC8EDBA25E9AA0D009112F3 /* SafeRegions.plist */; };
 		DBC8EDC025E9B4B7009112F3 /* R-C1 to exit.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC8EDBF25E9B4B7009112F3 /* R-C1 to exit.gpx */; };
@@ -189,6 +190,7 @@
 		DBC4C4FB26001A6F006957AD /* W-6.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-6.gpx"; sourceTree = "<group>"; };
 		DBC4C4FC26001A6F006957AD /* W-17.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-17.gpx"; sourceTree = "<group>"; };
 		DBC4C4FD26001A6F006957AD /* W-11.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-11.gpx"; sourceTree = "<group>"; };
+		DBC4C52B26001FAC006957AD /* RemoteCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCommands.swift; sourceTree = "<group>"; };
 		DBC8EDB225E9A82A009112F3 /* SafeRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeRegion.swift; sourceTree = "<group>"; };
 		DBC8EDBA25E9AA0D009112F3 /* SafeRegions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SafeRegions.plist; sourceTree = "<group>"; };
 		DBC8EDBF25E9B4B7009112F3 /* R-C1 to exit.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "R-C1 to exit.gpx"; path = "iOS_Emergency_Indoor_Nav/R-C1 to exit.gpx"; sourceTree = SOURCE_ROOT; };
@@ -309,6 +311,16 @@
 			path = IMDFModel;
 			sourceTree = "<group>";
 		};
+		DBA3CAAD2602D40900FEAEE6 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				DBC4C52B26001FAC006957AD /* RemoteCommands.swift */,
+				DBC8EDB225E9A82A009112F3 /* SafeRegion.swift */,
+				DB57B6BB25F0863100D17DFC /* Beacon.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		DBC4C4D326000FC4006957AD /* Simulator Locations */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +381,7 @@
 		DBCD38B425C8EC910015CD3A /* CoreLogic */ = {
 			isa = PBXGroup;
 			children = (
+				DBA3CAAD2602D40900FEAEE6 /* Entity */,
 				DBCD388C25C8C62C0015CD3A /* DataStore */,
 				DBCD38C025C8F3AF0015CD3A /* APIs */,
 				DBCD38B525C8EC9D0015CD3A /* UseCases */,
@@ -449,8 +462,6 @@
 				DBE0C9DB25C26F48009B9CB0 /* Info.plist */,
 				DB57B6B625F083A300D17DFC /* Beacons.plist */,
 				DBC8EDBA25E9AA0D009112F3 /* SafeRegions.plist */,
-				DBC8EDB225E9A82A009112F3 /* SafeRegion.swift */,
-				DB57B6BB25F0863100D17DFC /* Beacon.swift */,
 			);
 			path = iOS_Emergency_Indoor_Nav;
 			sourceTree = "<group>";
@@ -782,6 +793,7 @@
 				DBCD38B725C8ED530015CD3A /* UseCase.swift in Sources */,
 				DB626CEE25D724D0007BCAF5 /* Venue.swift in Sources */,
 				DB626CDC25D724D0007BCAF5 /* IndoorMapViewController.swift in Sources */,
+				DBC4C52C26001FAC006957AD /* RemoteCommands.swift in Sources */,
 				DB626CEC25D724D0007BCAF5 /* Feature.swift in Sources */,
 				DBE0C9CE25C26F46009B9CB0 /* AppDelegate.swift in Sources */,
 				DBCD38C225C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift in Sources */,
