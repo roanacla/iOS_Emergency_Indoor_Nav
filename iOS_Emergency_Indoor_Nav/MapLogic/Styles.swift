@@ -95,6 +95,7 @@ extension Occupant: StylableFeature {
   private enum StylableCategory: String {
     case restaurant
     case shopping
+    case safety
   }
   
   func configure(annotationView: MKAnnotationView) {
@@ -103,6 +104,8 @@ extension Occupant: StylableFeature {
       case .restaurant:
         annotationView.backgroundColor = UIColor(named: "RestaurantFill")
       case .shopping:
+        annotationView.backgroundColor = UIColor(named: "ShoppingFill")
+      case .safety:
         annotationView.backgroundColor = UIColor(named: "ShoppingFill")
       }
     }

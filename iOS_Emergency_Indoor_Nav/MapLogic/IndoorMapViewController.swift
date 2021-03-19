@@ -88,6 +88,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     // Setup the level picker with the shortName of each level
     setupLevelPicker()
     
+    drawSafeArea()
     loadSafeRegions()
     loadBeacons()
     DispatchQueue.main.asyncAfter(deadline: .now() + 5) { // change 2 to desired number of seconds
@@ -171,9 +172,21 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
       }
     }
     
-    let polygon = MKPolygon(coordinates: &points, count: points.count)
+    let polygon = MKPolyline(coordinates: &points, count: points.count)
     mapView.addOverlay(polygon)
+ 
+  }
+  
+  func drawSafeArea() {
+    var points: [CLLocationCoordinate2D] = []
     
+    points.append(CLLocationCoordinate2DMake(37.32995498762128, -121.88921548426148))
+    points.append(CLLocationCoordinate2DMake(37.33013520698357, -121.88883930444716))
+    points.append(CLLocationCoordinate2DMake(37.33036074717399, -121.88900962471959))
+    points.append(CLLocationCoordinate2DMake(37.33018212793003, -121.88938647508618))
+    
+    let safeAreaPolygon = MKPolygon(coordinates: &points, count: points.count)  
+    mapView.addOverlay(safeAreaPolygon)
   }
   
   func updateLocation() -> AnyCancellable? {

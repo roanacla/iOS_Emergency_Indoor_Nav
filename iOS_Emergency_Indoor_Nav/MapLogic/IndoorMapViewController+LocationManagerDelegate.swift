@@ -52,7 +52,7 @@ extension IndoorMapViewController: CLLocationManagerDelegate {
         let region = CLCircularRegion(center: safeRegion.location.coordinate, radius: 100.0, identifier: safeRegion.name)
         region.notifyOnEntry = true
         locationManager.startMonitoring(for: region)
-        mapView.addOverlay(MKCircle(center: safeRegion.location.coordinate, radius: 100.0))
+//        mapView.addOverlay(MKCircle(center: safeRegion.location.coordinate, radius: 100.0)) //draw safety circle
       }
     }
     locationManager.startUpdatingLocation()

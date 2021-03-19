@@ -14,10 +14,10 @@ extension IndoorMapViewController: MKMapViewDelegate {
   func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
     guard let shape = overlay as? (MKShape & MKGeoJSONObject),
           let feature = currentLevelFeatures.first( where: { $0.geometry.contains( where: { $0 == shape  }) }) else {
-      if overlay is MKPolygon {
+      if overlay is MKPolyline {
         let polyLine = MKPolylineRenderer(overlay: overlay)
-        polyLine.strokeColor = UIColor.darkGray
-        polyLine.lineWidth = 4.0
+        polyLine.strokeColor = UIColor.systemIndigo
+        polyLine.lineWidth = 3.0
         return polyLine
       } else if overlay is MKCircle {
         let circleRenderer = MKCircleRenderer(overlay: overlay)
@@ -25,10 +25,14 @@ extension IndoorMapViewController: MKMapViewDelegate {
         circleRenderer.strokeColor = .purple
         circleRenderer.fillColor = UIColor.purple.withAlphaComponent(0.4)
         return circleRenderer
-      } else {
-        
-        return MKOverlayRenderer(overlay: overlay)
+      } else if overlay is MKPolygon {
+        let safeRegionRenderer = MKPolygonRenderer(overlay: overlay)
+        safeRegionRenderer.lineWidth = 2.0
+        safeRegionRenderer.strokeColor = .systemGreen
+        safeRegionRenderer.fillColor = UIColor.systemGreen.withAlphaComponent(0.3)
+        return safeRegionRenderer
       }
+      return MKOverlayRenderer(overlay: overlay)
     }
     
     let renderer: MKOverlayPathRenderer
