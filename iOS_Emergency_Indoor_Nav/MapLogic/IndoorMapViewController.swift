@@ -91,6 +91,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     drawSafeArea()
     loadSafeRegions()
     loadBeacons()
+    //TODO: The async bellow causes an error the first time, handle that. 
     DispatchQueue.main.asyncAfter(deadline: .now() + 5) { // change 2 to desired number of seconds
       self.updateLocation()?
         .store(in: &self.subscriptions)

@@ -8,6 +8,8 @@ import CoreLocation
 import Foundation
 import UIKit
 import MapKit
+import UserNotifications
+
 //MARK: - LocationManager Delegate
 extension IndoorMapViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -23,13 +25,52 @@ extension IndoorMapViewController: CLLocationManagerDelegate {
   
   func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
     if presentedViewController == nil {
-      let alertController = UIAlertController(title: "You are safe now", message: "Plasese wait for first responder's instrucitons", preferredStyle: .alert)
-      let alertAction = UIAlertAction(title: "OK", style: .default) {
-        [weak self] action in
-        self?.dismiss(animated: true, completion: nil)
+//      display alert margin....
+//      displaySafeMessage()
+//      pushLocalNotification(for: region)
+    }
+  }
+  
+  func displaySafeMessage() {
+    let alertController = UIAlertController(title: "You are safe now", message: "Plasese wait for first responder's instrucitons", preferredStyle: .alert)
+    let alertAction = UIAlertAction(title: "OK", style: .default) {
+      [weak self] action in
+      self?.dismiss(animated: true, completion: nil)
+    }
+    alertController.addAction(alertAction)
+    present(alertController, animated: false, completion: nil)
+  }
+  
+  func pushLocalNotification(for region: CLRegion) {
+    let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
+    let content = UNMutableNotificationContent()
+    content.title = "You are safe now"
+
+    content.sound = UNNotificationSound.default
+    
+
+//      if let badge = badge, let number = Int(badge) {
+//        content.badge = NSNumber(value: number)
+//      }
+    
+    let identifier = UUID().uuidString
+    let request = UNNotificationRequest(identifier: identifier,
+                                        content: content,
+                                        trigger: trigger)
+    
+    UNUserNotificationCenter.current().add(request) {
+      [weak self] error in
+      
+      guard let self = self else { return }
+
+      if let error = error {
+        print("🔴 Error displaying location notification")
+      } else {
+        DispatchQueue.main.async {
+          self.navigationController?.popToRootViewController(
+            animated: true)
+        }
       }
-      alertController.addAction(alertAction)
-      present(alertController, animated: false, completion: nil)
     }
   }
   
