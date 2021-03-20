@@ -31,6 +31,9 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   let pointAnnotationViewIdentifier = "PointAnnotationView"
   let labelAnnotationViewIdentifier = "LabelAnnotationView"
   
+  //MARK: - Animation Properties
+  var pulseLayer: Pulsing?
+  
   // MARK: - View life cycle
   
   override func viewDidLoad() {
@@ -118,7 +121,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   
   //MARK: - IBActions
   @IBAction func showRoute(_ sender: Any) {
-    loadDirections(path: [])
+    stopPulsationAnimation()
   }
   
   //MARK: - Functions
@@ -162,7 +165,12 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     return placedEntries
   }
   
-  func loadDirections(path: [String]) { //e.i. ["W-10", "W-12", "W-15", "W-16"]
+  func startSafeMode(path: [String]) {
+    self.loadDirections(path: path)
+    self.pulseLayer = self.startPulsationAnimation()
+  }
+  
+  private func loadDirections(path: [String]) { //e.i. ["W-10", "W-12", "W-15", "W-16"]
     guard !path.isEmpty else { return }
     var points: [CLLocationCoordinate2D] = []
     
@@ -175,8 +183,28 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     
     let polygon = MKPolyline(coordinates: &points, count: points.count)
     mapView.addOverlay(polygon)
- 
   }
+  
+  private func startPulsationAnimation() -> Pulsing {
+    let pulse = Pulsing(numberOfPulses: Float.infinity, position: view.center, height: view.bounds.height, width: view.bounds.width)
+    pulse.animationDuration = 3.0
+    pulse.backgroundColor = UIColor.systemRed.cgColor
+    
+    self.view.layer.insertSublayer(pulse, above: mapView.layer)
+    
+    return pulse
+  }
+  
+  func stopPulsationAnimation() {
+    guard let pulseLayer = pulseLayer else { return }
+    pulseLayer.stopAnimationGroup()
+    
+    let pulse = Pulsing(numberOfPulses: 3.0, position: view.center, height: view.bounds.height, width: view.bounds.width)
+    pulse.animationDuration = 1.0
+    pulse.backgroundColor = UIColor.systemGreen.cgColor
+    self.view.layer.insertSublayer(pulse, above: mapView.layer)
+  }
+  
   
   func drawSafeArea() {
     var points: [CLLocationCoordinate2D] = []

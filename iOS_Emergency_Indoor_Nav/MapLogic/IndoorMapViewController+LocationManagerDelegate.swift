@@ -25,14 +25,15 @@ extension IndoorMapViewController: CLLocationManagerDelegate {
   
   func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
     if presentedViewController == nil {
+      self.stopPulsationAnimation()
 //      display alert margin....
-//      displaySafeMessage()
+      displaySafeMessage()
 //      pushLocalNotification(for: region)
     }
   }
   
   func displaySafeMessage() {
-    let alertController = UIAlertController(title: "You are safe now", message: "Plasese wait for first responder's instrucitons", preferredStyle: .alert)
+    let alertController = UIAlertController(title: "You are safe now", message: "Plasese wait for first responder's instructions", preferredStyle: .alert)
     let alertAction = UIAlertAction(title: "OK", style: .default) {
       [weak self] action in
       self?.dismiss(animated: true, completion: nil)
@@ -45,6 +46,7 @@ extension IndoorMapViewController: CLLocationManagerDelegate {
     let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
     let content = UNMutableNotificationContent()
     content.title = "You are safe now"
+    content.subtitle = "Please wait for first responder's instructions"
 
     content.sound = UNNotificationSound.default
     

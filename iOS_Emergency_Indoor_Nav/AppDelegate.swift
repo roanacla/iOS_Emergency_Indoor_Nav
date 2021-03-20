@@ -102,7 +102,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let decoder = JSONDecoder()
         let remoteCommands = try! decoder.decode(RemoteCommands.self, from: jsonData)
         if let vc = rootViewController as? IndoorMapViewController {
-          vc.loadDirections(path: remoteCommands.shortestPath)
+          vc.startSafeMode(path: remoteCommands.shortestPath)
         }
       }
     }
