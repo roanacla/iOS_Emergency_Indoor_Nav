@@ -44,6 +44,7 @@ public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
   func create(userID: String, tokenID: String) -> AnyCancellable {
     var mobileUser = MobileUser(id: userID)
     mobileUser.deviceTokenId = tokenID
+    mobileUser.buildingId = "id001" //Todo: The building id should be mutated when the user enters a building, not during creation.
     let sink = Amplify.API.mutate(request: .create(mobileUser))
       .resultPublisher
       .sink { completion in
@@ -119,7 +120,6 @@ public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
   }
   
   func updateDeviceTokenId(userID: String, newToken: String) -> AnyCancellable {
-//    let mobileUser = MobileUser(id: userID, deviceTokenId: newToken)
     let sink = Amplify.API.mutate(request: .updateMobileUserToken(id: userID, token: newToken))
       .resultPublisher
       .sink {

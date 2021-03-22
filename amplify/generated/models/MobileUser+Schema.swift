@@ -8,6 +8,7 @@ extension MobileUser {
     case id
     case deviceTokenId
     case location
+    case buildingId
   }
   
   public static let keys = CodingKeys.self
@@ -21,7 +22,8 @@ extension MobileUser {
     model.fields(
       .id(),
       .field(mobileUser.deviceTokenId, is: .optional, ofType: .string),
-      .field(mobileUser.location, is: .optional, ofType: .string)
+      .field(mobileUser.location, is: .optional, ofType: .string),
+      .field(mobileUser.buildingId, is: .optional, ofType: .string)
     )
     }
 }

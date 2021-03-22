@@ -8,9 +8,6 @@
 import Foundation
 import Combine
 
-enum APIError: Error {
-    case ohNo
-}
 
 protocol MobileUserRemoteAPI {
   //Subscriptions

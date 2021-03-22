@@ -90,7 +90,6 @@
 		DBCD38CD25C8F77B0015CD3A /* MobileUserRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD38CC25C8F77B0015CD3A /* MobileUserRemoteAPI.swift */; };
 		DBE0C9CE25C26F46009B9CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9CD25C26F46009B9CB0 /* AppDelegate.swift */; };
 		DBE0C9D025C26F46009B9CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9CF25C26F46009B9CB0 /* SceneDelegate.swift */; };
-		DBE0C9D225C26F46009B9CB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9D125C26F46009B9CB0 /* ViewController.swift */; };
 		DBE0C9D525C26F46009B9CB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBE0C9D325C26F46009B9CB0 /* Main.storyboard */; };
 		DBE0C9D725C26F48009B9CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBE0C9D625C26F48009B9CB0 /* Assets.xcassets */; };
 		DBE0C9DA25C26F48009B9CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBE0C9D825C26F48009B9CB0 /* LaunchScreen.storyboard */; };
@@ -208,7 +207,6 @@
 		DBE0C9CA25C26F46009B9CB0 /* iOS_Emergency_Indoor_Nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Emergency_Indoor_Nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE0C9CD25C26F46009B9CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBE0C9CF25C26F46009B9CB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DBE0C9D125C26F46009B9CB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DBE0C9D425C26F46009B9CB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DBE0C9D625C26F48009B9CB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBE0C9D925C26F48009B9CB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -457,7 +455,6 @@
 				DB626CBA25D724D0007BCAF5 /* MapLogic */,
 				DBAD892825CA37DA00FC0D4C /* NameSpaces.swift */,
 				DBE0C9CF25C26F46009B9CB0 /* SceneDelegate.swift */,
-				DBE0C9D125C26F46009B9CB0 /* ViewController.swift */,
 				DBA3CAB52605640C00FEAEE6 /* Pulsing.swift */,
 				DBE0C9D325C26F46009B9CB0 /* Main.storyboard */,
 				DBE0C9D625C26F48009B9CB0 /* Assets.xcassets */,
@@ -777,7 +774,6 @@
 				DBAD892925CA37DA00FC0D4C /* NameSpaces.swift in Sources */,
 				DB626CEA25D724D0007BCAF5 /* LevelPickerView.swift in Sources */,
 				DB626CDB25D724D0007BCAF5 /* IMDFDecoder.swift in Sources */,
-				DBE0C9D225C26F46009B9CB0 /* ViewController.swift in Sources */,
 				DBCD389225C8C63D0015CD3A /* MobileUser.swift in Sources */,
 				DBA3CAB62605640C00FEAEE6 /* Pulsing.swift in Sources */,
 				DB626CEB25D724D0007BCAF5 /* LabelAnnotationView.swift in Sources */,
