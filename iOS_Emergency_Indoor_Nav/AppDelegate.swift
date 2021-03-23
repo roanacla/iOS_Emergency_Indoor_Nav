@@ -13,7 +13,11 @@ import Combine
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+  
+  //MARK: - Properties
   var subscriptions = Set<AnyCancellable>()
+  var safeRegions: [SafeRegion] = []
+  var beaconsDict: [String: Beacon] = [:]
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
@@ -37,7 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
       }
     }
-        
+    
+    loadSafeRegions()
+    loadBeacons()
     return true
   }
   
@@ -67,6 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         .store(in: &subscriptions)
     } else {
       self.updateToken()
+        .store(in: &subscriptions)
+      self.updateLocation()?
         .store(in: &subscriptions)
     }
   }
@@ -128,5 +136,56 @@ extension AppDelegate {
                                              remoteAPI: MobileUserAmplifyAPI())
     return useCase.start()
   }
+  
+  
+  func updateLocation() -> AnyCancellable? {
+    guard let beacon = beaconsDict.randomElement() else { return nil }
+    let updateLocationUseCase = UpdateLocationUseCase(userID: UserDefaultsData.userID,
+                                                      tokenID: UserDefaultsData.deviceTokenId,
+                                                      location: beacon.value.name,
+                                                      remoteAPI: MobileUserAmplifyAPI())
+
+    return updateLocationUseCase.start()
+  }
+  
+  func loadBeacons() {
+    guard let entries = loadPlist(for: "Beacons") else { fatalError("Unable to load data") }
+    
+    for property in entries {
+      guard let name = property["Name"] as? String,
+            let latitude = property["Latitude"] as? NSNumber,
+            let longitude = property["Longitude"] as? NSNumber else { fatalError("Error reading data") }
+      
+      let beacon = Beacon(name: name, latitude: latitude.doubleValue, longitude: longitude.doubleValue)
+      beaconsDict[beacon.name] = beacon
+    }
+  }
+  
+  func loadSafeRegions() {
+    guard let entries = loadPlist(for: "SafeRegions") else { fatalError("Unable to load data") }
+    
+    for property in entries {
+      guard let name = property["Name"] as? String,
+            let latitude = property["Latitude"] as? NSNumber,
+            let longitude = property["Longitude"] as? NSNumber else { fatalError("Error reading data") }
+
+      let safeRegion = SafeRegion(latitude: latitude.doubleValue, longitude: longitude.doubleValue, name: name)
+      safeRegions.append(safeRegion)
+    }
+  }
+  
+  private func loadPlist(for filename: String) -> [[String: Any]]? {
+    guard let plistUrl = Bundle.main.url(forResource: filename, withExtension: "plist"),
+      let plistData = try? Data(contentsOf: plistUrl) else { return nil }
+    var placedEntries: [[String: Any]]? = nil
+    
+    do {
+      placedEntries = try PropertyListSerialization.propertyList(from: plistData, options: [], format: nil) as? [[String: Any]]
+    } catch {
+      print("error reading plist")
+    }
+    return placedEntries
+  }
+  
 }
 

@@ -19,8 +19,12 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   
   //MARK: - Properties
   var currentLocation: CLLocation?
-  var safeRegions: [SafeRegion] = []
-  var beaconsDict: [String: Beacon] = [:]
+  var safeRegions: [SafeRegion] {
+    return (UIApplication.shared.delegate as! AppDelegate).safeRegions
+  }
+  var beaconsDict: [String: Beacon] {
+    return (UIApplication.shared.delegate as! AppDelegate).beaconsDict
+  }
   private var subscriptions = Set<AnyCancellable>()
   
   var venue: Venue?
@@ -90,16 +94,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     
     // Setup the level picker with the shortName of each level
     setupLevelPicker()
-    
     drawSafeArea()
-    loadSafeRegions()
-    loadBeacons()
-    //TODO: The async bellow causes an error the first time, handle that. 
-    DispatchQueue.main.asyncAfter(deadline: .now() + 5) { // change 2 to desired number of seconds
-      self.updateLocation()?
-        .store(in: &self.subscriptions)
-    }
-    
   }
   
   //TODO: Use just to pin locations - Delete for production
@@ -125,46 +120,6 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   }
   
   //MARK: - Functions
-  
-  func loadBeacons() {
-    guard let entries = loadPlist(for: "Beacons") else { fatalError("Unable to load data") }
-    
-    for property in entries {
-      guard let name = property["Name"] as? String,
-            let latitude = property["Latitude"] as? NSNumber,
-            let longitude = property["Longitude"] as? NSNumber else { fatalError("Error reading data") }
-      
-      let beacon = Beacon(name: name, latitude: latitude.doubleValue, longitude: longitude.doubleValue)
-      beaconsDict[beacon.name] = beacon
-    }
-  }
-  
-  func loadSafeRegions() {
-    guard let entries = loadPlist(for: "SafeRegions") else { fatalError("Unable to load data") }
-    
-    for property in entries {
-      guard let name = property["Name"] as? String,
-            let latitude = property["Latitude"] as? NSNumber,
-            let longitude = property["Longitude"] as? NSNumber else { fatalError("Error reading data") }
-
-      let safeRegion = SafeRegion(latitude: latitude.doubleValue, longitude: longitude.doubleValue, name: name)
-      safeRegions.append(safeRegion)
-    }
-  }
-  
-  private func loadPlist(for filename: String) -> [[String: Any]]? {
-    guard let plistUrl = Bundle.main.url(forResource: filename, withExtension: "plist"),
-      let plistData = try? Data(contentsOf: plistUrl) else { return nil }
-    var placedEntries: [[String: Any]]? = nil
-    
-    do {
-      placedEntries = try PropertyListSerialization.propertyList(from: plistData, options: [], format: nil) as? [[String: Any]]
-    } catch {
-      print("error reading plist")
-    }
-    return placedEntries
-  }
-  
   func startSafeMode(path: [String]) {
     self.loadDirections(path: path)
     self.pulseLayer = self.startPulsationAnimation()
@@ -216,16 +171,6 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     
     let safeAreaPolygon = MKPolygon(coordinates: &points, count: points.count)  
     mapView.addOverlay(safeAreaPolygon)
-  }
-  
-  func updateLocation() -> AnyCancellable? {
-    guard let beacon = beaconsDict.randomElement() else { return nil }
-    let updateLocationUseCase = UpdateLocationUseCase(userID: UserDefaultsData.userID,
-                                                      tokenID: UserDefaultsData.deviceTokenId,
-                                                      location: beacon.value.name,
-                                                      remoteAPI: MobileUserAmplifyAPI())
-
-    return updateLocationUseCase.start()
   }
   
   // MARK: - LevelPickerDelegate
