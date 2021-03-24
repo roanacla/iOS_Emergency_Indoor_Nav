@@ -1,0 +1,6 @@
+type MobileUser @model {
+  id: ID!
+  deviceTokenId: String
+  location: String
+  buildingId: String
+}
