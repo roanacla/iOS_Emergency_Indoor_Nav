@@ -29,6 +29,7 @@ extension IndoorMapViewController: CLLocationManagerDelegate {
 //      display alert margin....
       displaySafeMessage()
 //      pushLocalNotification(for: region)
+      self.removeCurrentPathOverlay()
     }
   }
   

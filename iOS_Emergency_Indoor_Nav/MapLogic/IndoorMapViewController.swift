@@ -31,6 +31,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   var levels: [Level] = []
   var currentLevelFeatures = [StylableFeature]()
   var currentLevelOverlays = [MKOverlay]()
+  var currentPathOverlay = MKPolyline()
   var currentLevelAnnotations = [MKAnnotation]()
   let pointAnnotationViewIdentifier = "PointAnnotationView"
   let labelAnnotationViewIdentifier = "LabelAnnotationView"
@@ -136,8 +137,8 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
       }
     }
     
-    let polygon = MKPolyline(coordinates: &points, count: points.count)
-    mapView.addOverlay(polygon)
+    currentPathOverlay = MKPolyline(coordinates: &points, count: points.count)
+    mapView.addOverlay(currentPathOverlay)
   }
   
   private func startPulsationAnimation() -> Pulsing {

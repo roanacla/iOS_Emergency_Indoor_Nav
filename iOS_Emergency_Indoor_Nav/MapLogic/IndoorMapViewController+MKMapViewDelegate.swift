@@ -157,4 +157,8 @@ extension IndoorMapViewController: MKMapViewDelegate {
       levelPicker.selectedIndex = self.levels.firstIndex(of: baseLevel)!
     }
   }
+  
+  func removeCurrentPathOverlay() {
+    mapView.removeOverlay(currentPathOverlay)
+  }
 }
