@@ -104,14 +104,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
     
     let userInfo = response.notification.request.content.userInfo
-    if let notification = userInfo["aps"] as? Dictionary<String,String> {
-      if let remoteCommandjson = notification["alert"] {
-        let jsonData = remoteCommandjson.data(using: .utf8)!
-        let decoder = JSONDecoder()
-        let remoteCommands = try! decoder.decode(RemoteCommands.self, from: jsonData)
-        if let vc = rootViewController as? IndoorMapViewController {
-          vc.startSafeMode(path: remoteCommands.shortestPath)
-        }
+    if let notification = userInfo["shortestPath"] as? String {
+      let jsonData = notification.data(using: .utf8)!
+      let decoder = JSONDecoder()
+      let remoteCommands = try! decoder.decode(RemoteCommands.self, from: jsonData)
+      if let vc = rootViewController as? IndoorMapViewController {
+        vc.startSafeMode(path: remoteCommands.shortestPath)
       }
     }
 
