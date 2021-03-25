@@ -16,6 +16,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   @IBOutlet var mapView: MKMapView!
   let locationManager = CLLocationManager()
   @IBOutlet var levelPicker: LevelPickerView!
+  @IBOutlet weak var trackMeButton: UIButton!
   
   //MARK: - Properties
   var currentLocation: CLLocation?
@@ -26,7 +27,13 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     return (UIApplication.shared.delegate as! AppDelegate).beaconsDict
   }
   private var subscriptions = Set<AnyCancellable>()
-  
+  var isTrackerEnabled = false {
+    didSet {
+      if isTrackerEnabled {
+        locationManager.startUpdatingLocation()
+      }
+    }
+  }
   var venue: Venue?
   var levels: [Level] = []
   var currentLevelFeatures = [StylableFeature]()
@@ -116,8 +123,13 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   }
   
   //MARK: - IBActions
-  @IBAction func showRoute(_ sender: Any) {
-    stopPulsationAnimation()
+  @IBAction func locateMe(_ sender: Any) {
+    locationManager.startUpdatingLocation()
+  }
+  
+  @IBAction func trackMe(_ sender: Any) {
+    isTrackerEnabled.toggle()
+    trackMeButton.isSelected = isTrackerEnabled
   }
   
   //MARK: - Functions

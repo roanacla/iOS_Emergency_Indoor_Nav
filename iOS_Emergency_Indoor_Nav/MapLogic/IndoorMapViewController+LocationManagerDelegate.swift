@@ -15,6 +15,17 @@ extension IndoorMapViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     guard let currentLocation = locations.first else { return }
     self.currentLocation = currentLocation
+//    //Access the last object from locations to get perfect current location
+        if let location = locations.last {
+          let span = MKCoordinateSpan(latitudeDelta: 0.000975, longitudeDelta: 0.000975)
+          let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude,location.coordinate.longitude)
+          let region = MKCoordinateRegion(center: myLocation, span: span)
+          mapView.setRegion(region, animated: true)
+        }
+    mapView.showsUserLocation = true
+    if !self.isTrackerEnabled {
+      manager.stopUpdatingLocation()
+    }
     //    print("🗺 \(currentLocation.coordinate.latitude) \(currentLocation.coordinate.longitude)")
     //    print(currentLocation)
     //    guard let distanceInMeters = selectedPlace?.location.distance(from: currentLocation) else { return }
