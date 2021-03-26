@@ -138,6 +138,7 @@ extension AppDelegate {
   
   func updateLocation() -> AnyCancellable? {
     guard let beacon = beaconsDict.randomElement() else { return nil }
+//    let beacon = beaconsDict.filter({$0.key == "W-1"}).first!
     let updateLocationUseCase = UpdateLocationUseCase(userID: UserDefaultsData.userID,
                                                       tokenID: UserDefaultsData.deviceTokenId,
                                                       location: beacon.value.name,

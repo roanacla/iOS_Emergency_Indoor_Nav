@@ -103,6 +103,17 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     // Setup the level picker with the shortName of each level
     setupLevelPicker()
     drawSafeArea()
+    
+    mapView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(self.tapAction)))
+  }
+  
+  @objc func tapAction(gesture: UITapGestureRecognizer) {
+    print("hello")
+    if isTrackerEnabled {
+      DispatchQueue.main.async {
+        self.trackMe(self)
+      }
+    }
   }
   
   //TODO: Use just to pin locations - Delete for production

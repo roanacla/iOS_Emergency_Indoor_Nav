@@ -94,9 +94,9 @@
 		<key>Name</key>
 		<string>W-7</string>
 		<key>Latitude</key>
-		<real>37.32915892473355</real>
+		<real>37.32910453834767</real>
 		<key>Longitude</key>
-		<real>-121.8895889818668</real>
+		<real>-121.8896667659283</real>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -318,9 +318,9 @@
 		<key>Name</key>
 		<string>W-8</string>
 		<key>Latitude</key>
-		<real>37.32920158069493</real>
+		<real>37.32919091670684</real>
 		<key>Longitude</key>
-		<real>-121.8895018100739</real>
+		<real>-121.88952997326851</real>
 	</dict>
 </array>
 </plist>

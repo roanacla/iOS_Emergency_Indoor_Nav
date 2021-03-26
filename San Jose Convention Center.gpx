@@ -30,4 +30,8 @@
 		<name>W-16</name>
 		<desc>Nov 12, 2020 at 4:00:45 PM</desc>
 	</wpt>
+  <wpt lat="37.3302434450318" lon="-121.88902169466019">
+    <time>2020-11-13T00:03:45Z</time>
+    <name>END</name>
+  </wpt>
 </gpx>
