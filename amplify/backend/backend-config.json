@@ -9,12 +9,27 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 365,
-              "description": "MobileUserAPI key"
+              "description": "MobileUserAPI"
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authiosemergencyindoornaaee443a7"
+              }
+            }
+          ]
         }
       }
+    }
+  },
+  "auth": {
+    "iosemergencyindoornaaee443a7": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
     }
   }
 }

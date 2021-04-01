@@ -315,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				DBC4C52B26001FAC006957AD /* RemoteCommands.swift */,
+				DBAD892825CA37DA00FC0D4C /* NameSpaces.swift */,
 				DBC8EDB225E9A82A009112F3 /* SafeRegion.swift */,
 				DB57B6BB25F0863100D17DFC /* Beacon.swift */,
 			);
@@ -453,7 +454,6 @@
 				DBE0C9CD25C26F46009B9CB0 /* AppDelegate.swift */,
 				DB626CFE25D72877007BCAF5 /* IMDFData */,
 				DB626CBA25D724D0007BCAF5 /* MapLogic */,
-				DBAD892825CA37DA00FC0D4C /* NameSpaces.swift */,
 				DBE0C9CF25C26F46009B9CB0 /* SceneDelegate.swift */,
 				DBA3CAB52605640C00FEAEE6 /* Pulsing.swift */,
 				DBE0C9D325C26F46009B9CB0 /* Main.storyboard */,
