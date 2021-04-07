@@ -95,6 +95,15 @@
 		DBE0C9DA25C26F48009B9CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBE0C9D825C26F48009B9CB0 /* LaunchScreen.storyboard */; };
 		DBE0C9E525C26F48009B9CB0 /* iOS_Emergency_Indoor_NavTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9E425C26F48009B9CB0 /* iOS_Emergency_Indoor_NavTests.swift */; };
 		DBE0C9F025C26F48009B9CB0 /* iOS_Emergency_Indoor_NavUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9EF25C26F48009B9CB0 /* iOS_Emergency_Indoor_NavUITests.swift */; };
+		DBE85015261D307E00C848C3 /* MobileUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE8500C261D307D00C848C3 /* MobileUser.swift */; };
+		DBE85016261D307E00C848C3 /* IoT+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE8500D261D307D00C848C3 /* IoT+Schema.swift */; };
+		DBE85017261D307E00C848C3 /* IoT.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE8500E261D307D00C848C3 /* IoT.swift */; };
+		DBE85018261D307E00C848C3 /* Building+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE8500F261D307D00C848C3 /* Building+Schema.swift */; };
+		DBE85019261D307E00C848C3 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE85010261D307D00C848C3 /* Edge.swift */; };
+		DBE8501A261D307E00C848C3 /* MobileUser+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE85011261D307D00C848C3 /* MobileUser+Schema.swift */; };
+		DBE8501B261D307E00C848C3 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE85012261D307D00C848C3 /* AmplifyModels.swift */; };
+		DBE8501C261D307E00C848C3 /* Edge+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE85013261D307D00C848C3 /* Edge+Schema.swift */; };
+		DBE8501D261D307E00C848C3 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE85014261D307D00C848C3 /* Building.swift */; };
 		FB62BF8006BEBDAB71E0261D /* Pods_iOS_Emergency_Indoor_Nav.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866CC4997B86C3C7C2CF80B7 /* Pods_iOS_Emergency_Indoor_Nav.framework */; };
 /* End PBXBuildFile section */
 
@@ -217,6 +226,15 @@
 		DBE0C9EB25C26F48009B9CB0 /* iOS_Emergency_Indoor_NavUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_Emergency_Indoor_NavUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE0C9EF25C26F48009B9CB0 /* iOS_Emergency_Indoor_NavUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Emergency_Indoor_NavUITests.swift; sourceTree = "<group>"; };
 		DBE0C9F125C26F48009B9CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBE8500C261D307D00C848C3 /* MobileUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MobileUser.swift; path = amplify/generated/models/MobileUser.swift; sourceTree = SOURCE_ROOT; };
+		DBE8500D261D307D00C848C3 /* IoT+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "IoT+Schema.swift"; path = "amplify/generated/models/IoT+Schema.swift"; sourceTree = SOURCE_ROOT; };
+		DBE8500E261D307D00C848C3 /* IoT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IoT.swift; path = amplify/generated/models/IoT.swift; sourceTree = SOURCE_ROOT; };
+		DBE8500F261D307D00C848C3 /* Building+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Building+Schema.swift"; path = "amplify/generated/models/Building+Schema.swift"; sourceTree = SOURCE_ROOT; };
+		DBE85010261D307D00C848C3 /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Edge.swift; path = amplify/generated/models/Edge.swift; sourceTree = SOURCE_ROOT; };
+		DBE85011261D307D00C848C3 /* MobileUser+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MobileUser+Schema.swift"; path = "amplify/generated/models/MobileUser+Schema.swift"; sourceTree = SOURCE_ROOT; };
+		DBE85012261D307D00C848C3 /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = SOURCE_ROOT; };
+		DBE85013261D307D00C848C3 /* Edge+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Edge+Schema.swift"; path = "amplify/generated/models/Edge+Schema.swift"; sourceTree = SOURCE_ROOT; };
+		DBE85014261D307D00C848C3 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Building.swift; path = amplify/generated/models/Building.swift; sourceTree = SOURCE_ROOT; };
 		EF8181AB31CC48D8E877E5EF /* Pods_iOS_Emergency_Indoor_Nav_iOS_Emergency_Indoor_NavUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Emergency_Indoor_Nav_iOS_Emergency_Indoor_NavUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -372,6 +390,15 @@
 		DBCD388C25C8C62C0015CD3A /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
+				DBE85012261D307D00C848C3 /* AmplifyModels.swift */,
+				DBE85014261D307D00C848C3 /* Building.swift */,
+				DBE8500F261D307D00C848C3 /* Building+Schema.swift */,
+				DBE85010261D307D00C848C3 /* Edge.swift */,
+				DBE85013261D307D00C848C3 /* Edge+Schema.swift */,
+				DBE8500E261D307D00C848C3 /* IoT.swift */,
+				DBE8500D261D307D00C848C3 /* IoT+Schema.swift */,
+				DBE8500C261D307D00C848C3 /* MobileUser.swift */,
+				DBE85011261D307D00C848C3 /* MobileUser+Schema.swift */,
 				DBCD388E25C8C63D0015CD3A /* AmplifyModels.swift */,
 				DBCD388F25C8C63D0015CD3A /* MobileUser.swift */,
 				DBCD388D25C8C63D0015CD3A /* MobileUser+Schema.swift */,
@@ -774,6 +801,8 @@
 				DBAD892925CA37DA00FC0D4C /* NameSpaces.swift in Sources */,
 				DB626CEA25D724D0007BCAF5 /* LevelPickerView.swift in Sources */,
 				DB626CDB25D724D0007BCAF5 /* IMDFDecoder.swift in Sources */,
+				DBE8501A261D307E00C848C3 /* MobileUser+Schema.swift in Sources */,
+				DBE85019261D307E00C848C3 /* Edge.swift in Sources */,
 				DBCD389225C8C63D0015CD3A /* MobileUser.swift in Sources */,
 				DBA3CAB62605640C00FEAEE6 /* Pulsing.swift in Sources */,
 				DB626CEB25D724D0007BCAF5 /* LabelAnnotationView.swift in Sources */,
@@ -784,23 +813,30 @@
 				DB626CDA25D724D0007BCAF5 /* Styles.swift in Sources */,
 				DB626CF125D724D0007BCAF5 /* Occupant.swift in Sources */,
 				DB57B6A225F072FF00D17DFC /* IndoorMapViewController+LocationManagerDelegate.swift in Sources */,
+				DBE8501C261D307E00C848C3 /* Edge+Schema.swift in Sources */,
+				DBE85015261D307E00C848C3 /* MobileUser.swift in Sources */,
 				DB626CED25D724D0007BCAF5 /* Anchor.swift in Sources */,
 				DBCD38BC25C8F13B0015CD3A /* UpdateLocationUseCase.swift in Sources */,
 				DB626CF025D724D0007BCAF5 /* Amenity.swift in Sources */,
+				DBE85016261D307E00C848C3 /* IoT+Schema.swift in Sources */,
 				DBCD389025C8C63D0015CD3A /* MobileUser+Schema.swift in Sources */,
 				DB626CE925D724D0007BCAF5 /* PointAnnotationView.swift in Sources */,
+				DBE8501D261D307E00C848C3 /* Building.swift in Sources */,
+				DBE85018261D307E00C848C3 /* Building+Schema.swift in Sources */,
 				DB57B6BC25F0863100D17DFC /* Beacon.swift in Sources */,
 				DBCD38B725C8ED530015CD3A /* UseCase.swift in Sources */,
 				DB626CEE25D724D0007BCAF5 /* Venue.swift in Sources */,
 				DB626CDC25D724D0007BCAF5 /* IndoorMapViewController.swift in Sources */,
 				DBC4C52C26001FAC006957AD /* RemoteCommands.swift in Sources */,
 				DB626CEC25D724D0007BCAF5 /* Feature.swift in Sources */,
+				DBE8501B261D307E00C848C3 /* AmplifyModels.swift in Sources */,
 				DBE0C9CE25C26F46009B9CB0 /* AppDelegate.swift in Sources */,
 				DBCD38C225C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift in Sources */,
 				DBC8EDB325E9A82A009112F3 /* SafeRegion.swift in Sources */,
 				DBE0C9D025C26F46009B9CB0 /* SceneDelegate.swift in Sources */,
 				DB626CF225D724D0007BCAF5 /* LocalizedName.swift in Sources */,
 				DB626CEF25D724D0007BCAF5 /* Unit.swift in Sources */,
+				DBE85017261D307E00C848C3 /* IoT.swift in Sources */,
 				DBAD892E25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift in Sources */,
 				DBCD38CD25C8F77B0015CD3A /* MobileUserRemoteAPI.swift in Sources */,
 			);

@@ -6,12 +6,12 @@ public struct MobileUser: Model {
   public let id: String
   public var deviceTokenId: String?
   public var location: String?
-  public var buildingId: String?
+  public var buildingId: String
   
   public init(id: String = UUID().uuidString,
       deviceTokenId: String? = nil,
       location: String? = nil,
-      buildingId: String? = nil) {
+      buildingId: String) {
       self.id = id
       self.deviceTokenId = deviceTokenId
       self.location = location
