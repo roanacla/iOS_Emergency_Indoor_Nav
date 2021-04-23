@@ -6,6 +6,8 @@ extension Building {
   // MARK: - CodingKeys 
    public enum CodingKeys: String, ModelKey {
     case id
+    case isInEmergency
+    case emergencyDescription
     case edges
     case mobileUsers
   }
@@ -20,7 +22,9 @@ extension Building {
     
     model.fields(
       .id(),
-      .hasMany(building.edges, is: .optional, ofType: Edge.self, associatedWith: Edge.keys.building),
+      .field(building.isInEmergency, is: .optional, ofType: .bool),
+      .field(building.emergencyDescription, is: .optional, ofType: .string),
+      .hasMany(building.edges, is: .optional, ofType: Edge.self, associatedWith: Edge.keys.buildingId),
       .hasMany(building.mobileUsers, is: .optional, ofType: MobileUser.self, associatedWith: MobileUser.keys.buildingId)
     )
     }

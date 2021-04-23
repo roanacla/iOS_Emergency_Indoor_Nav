@@ -1,5 +1,7 @@
 type Building @model {
     id: ID!
+    isInEmergency: Boolean
+    emergencyDescription: String
     edges: [Edge] @connection(keyName: "byBuilding", fields: ["id"])
     mobileUsers: [MobileUser] @connection(keyName: "byBuilding", fields: ["id"])
 }
@@ -7,12 +9,15 @@ type Building @model {
 type Edge @model @key(name: "byBuilding", fields: ["buildingId"]) {
     id: ID!
     buildingId: ID!
-    building: Building @connection(fields: ["buildingId"])
     sourceIoTId: ID!
     sourceIoT: IoT @connection(fields: ["sourceIoTId"])
     destinationIoTId: ID!
     destinationIoT: IoT @connection(fields: ["destinationIoTId"])
-    isActive: Boolean
+    isActive: Boolean!
+    canBeDeactivated: Boolean!
+    name: String
+    latitude: Float
+    longitude: Float
 }
 
 type IoT @model {
@@ -22,7 +27,6 @@ type IoT @model {
     latitude: Float
     longitude: Float
 }
-
 
 type MobileUser @model @key(name: "byBuilding", fields: ["buildingId"]) {
     id: ID!
