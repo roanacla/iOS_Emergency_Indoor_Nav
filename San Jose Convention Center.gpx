@@ -3,31 +3,29 @@
 	<wpt lat="37.32828340577664" lon="-121.88972711563109">
 		<time>2020-11-13T00:00:00Z</time>
 		<name>W-1</name>
-		<desc>Nov 12, 2020 at 4:00:00 PM</desc>
 	</wpt>
 	<wpt lat="37.328953109379604" lon="-121.8902327120304">
 		<time>2020-11-13T00:00:10Z</time>
 		<name>W-4</name>
-		<desc>Nov 12, 2020 at 4:00:10 PM</desc>
 	</wpt>
 	<wpt lat="37.32922717426011" lon="-121.88964262604713">
 		<time>2020-11-13T00:00:20Z</time>
 		<name>W-6</name>
-		<desc>Nov 12, 2020 at 4:00:20 PM</desc>
 	</wpt>
 	<wpt lat="37.32915892473355" lon="-121.88958898186682">
 		<time>2020-11-13T00:00:25Z</time>
 		<name>W-7</name>
-		<desc>Nov 12, 2020 at 4:00:25 PM</desc>
 	</wpt>
 	<wpt lat="37.3295993463689" lon="-121.88865154981613">
 		<time>2020-11-13T00:00:35Z</time>
 		<name>W-15</name>
-		<desc>Nov 12, 2020 at 4:00:35 PM</desc>
 	</wpt>
 	<wpt lat="37.3301378729472" lon="-121.88910216093063">
 		<time>2020-11-13T00:00:45Z</time>
 		<name>W-16</name>
-		<desc>Nov 12, 2020 at 4:00:45 PM</desc>
 	</wpt>
+  <wpt lat="37.3302434450318" lon="-121.88902169466019">
+    <time>2020-11-13T00:03:45Z</time>
+    <name>END</name>
+  </wpt>
 </gpx>

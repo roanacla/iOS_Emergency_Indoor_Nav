@@ -1,6 +1,36 @@
-type MobileUser @model {
-  id: ID!
-  deviceTokenId: String
-  location: String
-  buildingId: String
+type Building @model {
+    id: ID!
+    isInEmergency: Boolean
+    emergencyDescription: String
+    edges: [Edge] @connection(keyName: "byBuilding", fields: ["id"])
+    mobileUsers: [MobileUser] @connection(keyName: "byBuilding", fields: ["id"])
+}
+
+type Edge @model @key(name: "byBuilding", fields: ["buildingId"]) {
+    id: ID!
+    buildingId: ID!
+    sourceIoTId: ID!
+    sourceIoT: IoT @connection(fields: ["sourceIoTId"])
+    destinationIoTId: ID!
+    destinationIoT: IoT @connection(fields: ["destinationIoTId"])
+    isActive: Boolean!
+    canBeDeactivated: Boolean!
+    name: String
+    latitude: Float
+    longitude: Float
+}
+
+type IoT @model {
+    id: ID!
+    name: String
+    number: Int
+    latitude: Float
+    longitude: Float
+}
+
+type MobileUser @model @key(name: "byBuilding", fields: ["buildingId"]) {
+    id: ID!
+    deviceTokenId: String
+    location: String
+    buildingId: ID!
 }

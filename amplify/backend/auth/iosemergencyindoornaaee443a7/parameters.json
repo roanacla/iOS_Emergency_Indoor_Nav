@@ -1,0 +1,57 @@
+{
+    "identityPoolName": "iosemergencyindoornaaee443a7_identitypool_aee443a7",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "iosemeaee443a7",
+    "userPoolName": "iosemergencyindoornaaee443a7_userpool_aee443a7",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "userpoolClientLambdaRole": "iosemeaee443a7_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "sharedId": "aee443a7",
+    "resourceName": "iosemergencyindoornaaee443a7",
+    "authSelections": "identityPoolAndUserPool",
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    },
+    "useDefault": "defaultSocial",
+    "userPoolGroupList": [],
+    "serviceName": "Cognito",
+    "dependsOn": [],
+    "hostedUI": true,
+    "hostedUIDomainName": "iosemergencyindoornabe238885-be238885",
+    "authProvidersUserPool": [],
+    "hostedUIProviderMeta": "[]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"myapp://\"],\"LogoutURLs\":[\"myapp://\"]}"
+}

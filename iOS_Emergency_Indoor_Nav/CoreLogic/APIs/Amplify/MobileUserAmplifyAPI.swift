@@ -42,9 +42,8 @@ extension GraphQLRequest {
 public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
   
   func create(userID: String, tokenID: String) -> AnyCancellable {
-    var mobileUser = MobileUser(id: userID)
+    var mobileUser = MobileUser(id: userID, buildingId: "id001") //Todo: The building id should be mutated when the user enters a building, not during creation.
     mobileUser.deviceTokenId = tokenID
-    mobileUser.buildingId = "id001" //Todo: The building id should be mutated when the user enters a building, not during creation.
     let sink = Amplify.API.mutate(request: .create(mobileUser))
       .resultPublisher
       .sink { completion in

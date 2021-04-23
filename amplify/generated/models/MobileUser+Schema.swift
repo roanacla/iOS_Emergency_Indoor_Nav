@@ -23,7 +23,7 @@ extension MobileUser {
       .id(),
       .field(mobileUser.deviceTokenId, is: .optional, ofType: .string),
       .field(mobileUser.location, is: .optional, ofType: .string),
-      .field(mobileUser.buildingId, is: .optional, ofType: .string)
+      .field(mobileUser.buildingId, is: .required, ofType: .string)
     )
     }
 }
