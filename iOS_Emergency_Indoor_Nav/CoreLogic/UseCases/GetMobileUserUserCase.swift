@@ -17,7 +17,7 @@ class GetMobileUserUseCase: UseCase {
     self.remoteAPI = remoteAPI
   }
   
-  public func start() -> AnyCancellable {
+  public func start(dispatchGroup: DispatchGroup? = nil, semaphore: DispatchSemaphore? = nil) -> AnyCancellable {
     return remoteAPI.getMobileUser(userID: userID)
   }
   

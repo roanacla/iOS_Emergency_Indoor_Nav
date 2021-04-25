@@ -21,7 +21,7 @@ public class UpdateLocationUseCase: UseCase {
     self.remoteAPI = remoteAPI
   }
   
-  public func start() -> AnyCancellable {
-    return remoteAPI.updateLocation(userID: userID, location: location)
+  public func start(dispatchGroup: DispatchGroup? = nil, semaphore: DispatchSemaphore? = nil) -> AnyCancellable {
+    return remoteAPI.updateLocation(userID: userID, location: location, dispatchGroup: dispatchGroup, semaphore: semaphore)
   }
 }

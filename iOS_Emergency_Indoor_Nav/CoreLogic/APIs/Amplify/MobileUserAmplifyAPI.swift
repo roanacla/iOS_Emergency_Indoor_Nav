@@ -28,7 +28,7 @@ extension GraphQLRequest {
     let document = """
       mutation updateMobileUserToken($id: ID!, $token: String!) {
         updateMobileUser(input: {id: $id, deviceTokenId: $token}) {
-          location
+          deviceTokenId
         }
       }
       """
@@ -41,15 +41,18 @@ extension GraphQLRequest {
 
 public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
   
-  func create(userID: String, tokenID: String) -> AnyCancellable {
-    var mobileUser = MobileUser(id: userID, buildingId: "id001") //Todo: The building id should be mutated when the user enters a building, not during creation.
-    mobileUser.deviceTokenId = tokenID
+  func create(userID: String, dispatchGroup: DispatchGroup? = nil, semaphore: DispatchSemaphore? = nil) -> AnyCancellable {
+    semaphore?.wait()
+    dispatchGroup?.enter()
+    let mobileUser = MobileUser(id: userID, buildingId: "id001") //Todo: The building id should be mutated when the user enters a building, not during creation.
     let sink = Amplify.API.mutate(request: .create(mobileUser))
       .resultPublisher
       .sink { completion in
         if case let .failure(error) = completion {
           print("🔴 Failed to create mobileUser graphql \(error)")
         }
+        dispatchGroup?.leave()
+        semaphore?.signal()
       }
       receiveValue: { result in
         switch result {
@@ -100,13 +103,17 @@ public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
     return publisher
   }
   
-  func updateLocation(userID: String, location: String) -> AnyCancellable {
+  func updateLocation(userID: String, location: String, dispatchGroup: DispatchGroup? = nil, semaphore: DispatchSemaphore? = nil) -> AnyCancellable {
+    semaphore?.wait()
+    dispatchGroup?.enter()
     return Amplify.API.mutate(request: .updateMobileUserLocation(id: userID, location: location))
       .resultPublisher
       .sink {
         if case let .failure(error) = $0 {
           print("🔴 Failed to update device's location \(error)")
         }
+        dispatchGroup?.leave()
+        semaphore?.signal()
       }
       receiveValue: { result in
         switch result {
@@ -118,13 +125,17 @@ public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
       }
   }
   
-  func updateDeviceTokenId(userID: String, newToken: String) -> AnyCancellable {
+  func updateDeviceTokenId(userID: String, newToken: String, dispatchGroup: DispatchGroup? = nil, semaphore: DispatchSemaphore? = nil) -> AnyCancellable {
+    semaphore?.wait()
+    dispatchGroup?.enter()
     let sink = Amplify.API.mutate(request: .updateMobileUserToken(id: userID, token: newToken))
       .resultPublisher
       .sink {
         if case let .failure(error) = $0 {
           print("🔴 Failed to update device token \(error)")
         }
+        dispatchGroup?.leave()
+        semaphore?.signal()
       }
       receiveValue: { result in
         switch result {

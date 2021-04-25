@@ -26,7 +26,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   var beaconsDict: [String: Beacon] {
     return (UIApplication.shared.delegate as! AppDelegate).beaconsDict
   }
-  private var subscriptions = Set<AnyCancellable>()
+  var subscriptions = Set<AnyCancellable>()
   var isTrackerEnabled = false {
     didSet {
       if isTrackerEnabled {
@@ -150,6 +150,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   }
   
   private func loadDirections(path: [String]) { //e.i. ["W-10", "W-12", "W-15", "W-16"]
+    print(path)
     guard !path.isEmpty else { return }
     var points: [CLLocationCoordinate2D] = []
     
@@ -203,5 +204,11 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     precondition(selectedIndex >= 0 && selectedIndex < self.levels.count)
     let selectedLevel = self.levels[selectedIndex]
     showFeaturesForOrdinal(selectedLevel.properties.ordinal)
+  }
+  
+  func updateUserLocationEqualToSafeArea() {
+    let remoteAPI = MobileUserAmplifyAPI()
+    remoteAPI.updateLocation(userID: UserDefaultsData.userID, location: "W-16")
+      .store(in: &subscriptions)
   }
 }

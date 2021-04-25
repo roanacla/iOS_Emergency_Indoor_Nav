@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 public protocol UseCase {
-  func start() -> AnyCancellable
+  func start(dispatchGroup: DispatchGroup?, semaphore: DispatchSemaphore?) -> AnyCancellable
 }

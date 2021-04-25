@@ -37,10 +37,10 @@ extension IndoorMapViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
     if presentedViewController == nil {
       self.stopPulsationAnimation()
-//      display alert margin....
-      displaySafeMessage()
 //      pushLocalNotification(for: region)
+      self.displaySafeMessage()
       self.removeCurrentPathOverlay()
+      self.updateUserLocationEqualToSafeArea()
     }
   }
   

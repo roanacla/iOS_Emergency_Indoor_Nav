@@ -19,7 +19,7 @@ class UpdateDeviceTokenIdUseCase: UseCase {
     self.remoteAPI = remoteAPI
   }
   
-  public func start() -> AnyCancellable {
-    return remoteAPI.updateDeviceTokenId(userID: userID, newToken: tokenID)
+  public func start(dispatchGroup: DispatchGroup? = nil, semaphore: DispatchSemaphore? = nil) -> AnyCancellable {
+    return remoteAPI.updateDeviceTokenId(userID: userID, newToken: tokenID, dispatchGroup: dispatchGroup, semaphore: semaphore)
   }
 }

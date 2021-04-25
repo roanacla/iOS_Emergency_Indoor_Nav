@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var subscriptions = Set<AnyCancellable>()
   var safeRegions: [SafeRegion] = []
   var beaconsDict: [String: Beacon] = [:]
+  let dispatchGroup = DispatchGroup()
+  let semaphore: DispatchSemaphore? = DispatchSemaphore(value: 1)
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
@@ -44,6 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     loadSafeRegions()
     loadBeacons()
+    
+    #if targetEnvironment(simulator) // Simulator doesn't have notifications, thus updates data from here
+    UserDefaults.standard.setValue(UUID().uuidString, forKey: UserDefaultsKeys.deviceTokenID)
+    self.updateUserData()
+    #endif
     return true
   }
   
@@ -68,15 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UserDefaults.standard.set(token, forKey: UserDefaultsKeys.deviceTokenID)
     
     //Create user or update token in provider
-    if UserDefaults.standard.value(forKey: UserDefaultsKeys.userID) == nil {
-      self.createUserSubs()
-        .store(in: &subscriptions)
-    } else {
-      self.updateToken()
-        .store(in: &subscriptions)
-      self.updateLocation()?
-        .store(in: &subscriptions)
-    }
+    self.updateUserData()
   }
 }
 
@@ -121,30 +120,47 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
 extension AppDelegate {
   
+  func updateUserData() {
+    DispatchQueue.global(qos: .userInitiated).async(group: dispatchGroup) {
+      if UserDefaults.standard.value(forKey: UserDefaultsKeys.userID) == nil {
+        self.createUserSubs()
+          .store(in: &self.subscriptions)
+      }
+      self.updateLocation()?
+        .store(in: &self.subscriptions)
+      self.updateToken()
+        .store(in: &self.subscriptions)
+    }
+  }
+  
   func createUserSubs() -> AnyCancellable {
+    
     let useCase = CreateUserUseCase(userID: UserDefaultsData.userID,
-                                    tokenID: UserDefaultsData.deviceTokenId,
                                     remoteAPI: MobileUserAmplifyAPI())
-    return useCase.start()
+    return useCase.start(dispatchGroup: dispatchGroup, semaphore: semaphore)
   }
   
   func updateToken() -> AnyCancellable {
     let useCase = UpdateDeviceTokenIdUseCase(userID: UserDefaultsData.userID,
+                                             //deviceTokenId updated in didRegisterForRemoteNotificationsWithDeviceToken
                                              tokenID: UserDefaultsData.deviceTokenId,
                                              remoteAPI: MobileUserAmplifyAPI())
-    return useCase.start()
+    return useCase.start(dispatchGroup: dispatchGroup, semaphore: semaphore)
   }
   
   
   func updateLocation() -> AnyCancellable? {
-    guard let beacon = beaconsDict.randomElement() else { return nil }
-//    let beacon = beaconsDict.filter({$0.key == "W-16"}).first!
+    guard var beacon = beaconsDict.randomElement() else { return nil }
+    #if DEBUG
+    while beacon.value.name == "W-16" {
+      beacon = beaconsDict.randomElement()!
+    }
+    #endif
     let updateLocationUseCase = UpdateLocationUseCase(userID: UserDefaultsData.userID,
                                                       tokenID: UserDefaultsData.deviceTokenId,
                                                       location: beacon.value.name,
                                                       remoteAPI: MobileUserAmplifyAPI())
-
-    return updateLocationUseCase.start()
+    return updateLocationUseCase.start(dispatchGroup: dispatchGroup, semaphore: semaphore)
   }
   
   func loadBeacons() {
