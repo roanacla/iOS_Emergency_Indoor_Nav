@@ -8,6 +8,8 @@ extension MobileUser {
     case id
     case deviceTokenId
     case location
+    case latitude
+    case longitude
     case buildingId
   }
   
@@ -23,6 +25,8 @@ extension MobileUser {
       .id(),
       .field(mobileUser.deviceTokenId, is: .optional, ofType: .string),
       .field(mobileUser.location, is: .optional, ofType: .string),
+      .field(mobileUser.latitude, is: .optional, ofType: .double),
+      .field(mobileUser.longitude, is: .optional, ofType: .double),
       .field(mobileUser.buildingId, is: .required, ofType: .string)
     )
     }

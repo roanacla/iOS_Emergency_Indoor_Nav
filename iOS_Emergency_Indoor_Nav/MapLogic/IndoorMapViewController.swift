@@ -27,13 +27,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     return (UIApplication.shared.delegate as! AppDelegate).beaconsDict
   }
   var subscriptions = Set<AnyCancellable>()
-  var isTrackerEnabled = false {
-    didSet {
-      if isTrackerEnabled {
-        locationManager.startUpdatingLocation()
-      }
-    }
-  }
+  var isTrackerEnabled = false
   var venue: Venue?
   var levels: [Level] = []
   var currentLevelFeatures = [StylableFeature]()
@@ -62,6 +56,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
     locationManager.allowsBackgroundLocationUpdates = true
     locationManager.requestLocation()
+    locationManager.startUpdatingLocation()
     
     self.mapView.delegate = self
     self.mapView.register(PointAnnotationView.self, forAnnotationViewWithReuseIdentifier: pointAnnotationViewIdentifier)
@@ -135,7 +130,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   
   //MARK: - IBActions
   @IBAction func locateMe(_ sender: Any) {
-    locationManager.startUpdatingLocation()
+    self.centerMapInCurrentLocation()
   }
   
   @IBAction func trackMe(_ sender: Any) {
@@ -196,6 +191,15 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     
     let safeAreaPolygon = MKPolygon(coordinates: &points, count: points.count)  
     mapView.addOverlay(safeAreaPolygon)
+  }
+  
+  func centerMapInCurrentLocation() {
+    if let location = self.currentLocation {
+      let span = MKCoordinateSpan(latitudeDelta: 0.000975, longitudeDelta: 0.000975)
+      let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude,location.coordinate.longitude)
+      let region = MKCoordinateRegion(center: myLocation, span: span)
+      mapView.setRegion(region, animated: true)
+    }
   }
   
   // MARK: - LevelPickerDelegate

@@ -32,5 +32,7 @@ type MobileUser @model @key(name: "byBuilding", fields: ["buildingId"]) {
     id: ID!
     deviceTokenId: String
     location: String
+    latitude: Float
+    longitude: Float
     buildingId: ID!
 }
