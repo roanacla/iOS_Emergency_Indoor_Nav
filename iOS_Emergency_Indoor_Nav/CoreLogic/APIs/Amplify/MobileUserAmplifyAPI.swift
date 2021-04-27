@@ -37,6 +37,24 @@ extension GraphQLRequest {
                                                  "token": token],
                                      responseType: JSONValue.self)
   }
+  
+  static func updateMobileUserCoordinate(id: String, latitude: Double, longitude: Double) -> GraphQLRequest<JSONValue> {
+    let document = """
+      mutation updateMobileUserCoordinate($id: ID!, $latitude: Float!, $longitude: Float!) {
+        updateMobileUser(input: {id: $id, latitude: $latitude, longitude: $longitude}) {
+          id
+          latitude
+          longitude
+          buildingId
+        }
+      }
+      """
+    return GraphQLRequest<JSONValue>(document: document,
+                                     variables: ["id": id,
+                                                 "latitude": latitude,
+                                                 "longitude": longitude],
+                                     responseType: JSONValue.self)
+  }
 }
 
 public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
@@ -143,6 +161,25 @@ public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
           print("🟢 Successfully updated device token: \(todo)")
         case .failure(let error):
           print("🔴 Got failed result updating device token \(error.errorDescription)")
+        }
+      }
+    return sink
+  }
+  
+  func updateCoordinates(userID: String, latitude: Double, longitude: Double) -> AnyCancellable {
+    let sink = Amplify.API.mutate(request: .updateMobileUserCoordinate(id: userID, latitude: latitude, longitude: longitude))
+      .resultPublisher
+      .sink {
+        if case let .failure(error) = $0 {
+          print("🔴 Failed to update device coordinate \(error)")
+        }
+      }
+      receiveValue: { result in
+        switch result {
+        case .success(let todo):
+          print("🟢 Successfully updated device coordinate: \(todo)")
+        case .failure(let error):
+          print("🔴 Got failed result updating device coordinate \(error.errorDescription)")
         }
       }
     return sink

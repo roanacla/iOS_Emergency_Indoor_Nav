@@ -95,6 +95,7 @@
 		DBCD38BC25C8F13B0015CD3A /* UpdateLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD38BB25C8F13B0015CD3A /* UpdateLocationUseCase.swift */; };
 		DBCD38C225C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD38C125C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift */; };
 		DBCD38CD25C8F77B0015CD3A /* MobileUserRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD38CC25C8F77B0015CD3A /* MobileUserRemoteAPI.swift */; };
+		DBDC947F26378BC1001BEA28 /* UpdateCoordinateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDC947E26378BC1001BEA28 /* UpdateCoordinateUseCase.swift */; };
 		DBE0C9CE25C26F46009B9CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9CD25C26F46009B9CB0 /* AppDelegate.swift */; };
 		DBE0C9D025C26F46009B9CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9CF25C26F46009B9CB0 /* SceneDelegate.swift */; };
 		DBE0C9D525C26F46009B9CB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBE0C9D325C26F46009B9CB0 /* Main.storyboard */; };
@@ -218,6 +219,7 @@
 		DBCD38BB25C8F13B0015CD3A /* UpdateLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocationUseCase.swift; sourceTree = "<group>"; };
 		DBCD38C125C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileUserAmplifyAPI.swift; sourceTree = "<group>"; };
 		DBCD38CC25C8F77B0015CD3A /* MobileUserRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileUserRemoteAPI.swift; sourceTree = "<group>"; };
+		DBDC947E26378BC1001BEA28 /* UpdateCoordinateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCoordinateUseCase.swift; sourceTree = "<group>"; };
 		DBE0C9CA25C26F46009B9CB0 /* iOS_Emergency_Indoor_Nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Emergency_Indoor_Nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE0C9CD25C26F46009B9CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBE0C9CF25C26F46009B9CB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 				DBCD38BB25C8F13B0015CD3A /* UpdateLocationUseCase.swift */,
 				DBAD892D25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift */,
 				DB7FD07A25CB95A900052FA3 /* CreateUserUseCase.swift */,
+				DBDC947E26378BC1001BEA28 /* UpdateCoordinateUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				DB626CEB25D724D0007BCAF5 /* LabelAnnotationView.swift in Sources */,
 				DB7FD07B25CB95A900052FA3 /* CreateUserUseCase.swift in Sources */,
 				DB57B6AA25F0745B00D17DFC /* IndoorMapViewController+MKMapViewDelegate.swift in Sources */,
+				DBDC947F26378BC1001BEA28 /* UpdateCoordinateUseCase.swift in Sources */,
 				DB01EDFE26338CF9001CA346 /* Building+Schema.swift in Sources */,
 				DB626CF325D724D0007BCAF5 /* Opening.swift in Sources */,
 				DB01EDFD26338CF9001CA346 /* Edge+Schema.swift in Sources */,

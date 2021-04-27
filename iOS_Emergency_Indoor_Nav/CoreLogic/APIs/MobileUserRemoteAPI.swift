@@ -15,7 +15,7 @@ protocol MobileUserRemoteAPI {
   func getMobileUser(userID: String) -> AnyCancellable
   func updateLocation(userID: String, location: String, dispatchGroup: DispatchGroup?, semaphore: DispatchSemaphore?) -> AnyCancellable
   func updateDeviceTokenId(userID: String, newToken: String, dispatchGroup: DispatchGroup?, semaphore: DispatchSemaphore?) -> AnyCancellable
-  
+  func updateCoordinates(userID: String, latitude: Double, longitude: Double) -> AnyCancellable
   //Publishers
   func getMobileUser(withID id: String) -> AnyPublisher<MobileUser?,Error>
 }

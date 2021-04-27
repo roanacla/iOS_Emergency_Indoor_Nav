@@ -53,7 +53,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     // Request location authorization so the user's current location can be displayed on the map
     locationManager.requestWhenInUseAuthorization()
     locationManager.delegate = self
-    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
     locationManager.allowsBackgroundLocationUpdates = true
     locationManager.requestLocation()
     locationManager.startUpdatingLocation()
@@ -200,6 +200,15 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
       let region = MKCoordinateRegion(center: myLocation, span: span)
       mapView.setRegion(region, animated: true)
     }
+  }
+  
+  func remoteUpdateMobileUserLocation(latitude: Double, longitude: Double, remoteAPI: MobileUserRemoteAPI) {
+    let useCase = UpdateCoordinateUseCase(userID: UserDefaultsData.userID,
+                                          latitude: latitude,
+                                          longitude: longitude,
+                                          remoteAPI: remoteAPI)
+    useCase.start()
+      .store(in: &subscriptions)
   }
   
   // MARK: - LevelPickerDelegate

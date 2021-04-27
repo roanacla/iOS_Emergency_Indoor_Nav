@@ -18,6 +18,9 @@ extension IndoorMapViewController: CLLocationManagerDelegate {
     if self.isTrackerEnabled {
       self.centerMapInCurrentLocation()
     }
+    self.remoteUpdateMobileUserLocation(latitude: currentLocation.coordinate.latitude,
+                                        longitude: currentLocation.coordinate.longitude,
+                                        remoteAPI: MobileUserAmplifyAPI())
   }
   
   func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
