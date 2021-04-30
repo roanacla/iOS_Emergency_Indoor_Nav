@@ -46,6 +46,7 @@ extension GraphQLRequest {
           latitude
           longitude
           buildingId
+          location
         }
       }
       """
