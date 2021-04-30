@@ -41,6 +41,8 @@
 		DB626D0425DC66E6007BCAF5 /* San Jose Convention Center.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DB626D0325DC66E6007BCAF5 /* San Jose Convention Center.gpx */; };
 		DB626D0925DC66EE007BCAF5 /* W-16.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DB626D0825DC66EE007BCAF5 /* W-16.gpx */; };
 		DB7FD07B25CB95A900052FA3 /* CreateUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7FD07A25CB95A900052FA3 /* CreateUserUseCase.swift */; };
+		DB82F585263A4F02005E4BFD /* multipleSimulatorsStartup.sh in Resources */ = {isa = PBXBuildFile; fileRef = DB82F583263A4F02005E4BFD /* multipleSimulatorsStartup.sh */; };
+		DB82F586263A4F02005E4BFD /* MultipleSimulators.config in Resources */ = {isa = PBXBuildFile; fileRef = DB82F584263A4F02005E4BFD /* MultipleSimulators.config */; };
 		DBA3CAB62605640C00FEAEE6 /* Pulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA3CAB52605640C00FEAEE6 /* Pulsing.swift */; };
 		DBAD892E25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD892D25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift */; };
 		DBC4C4FE26001A6F006957AD /* R-N1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC4C4D726001A6D006957AD /* R-N1.gpx */; };
@@ -164,6 +166,8 @@
 		DB626D0325DC66E6007BCAF5 /* San Jose Convention Center.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "San Jose Convention Center.gpx"; sourceTree = SOURCE_ROOT; };
 		DB626D0825DC66EE007BCAF5 /* W-16.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "W-16.gpx"; path = "iOS_Emergency_Indoor_Nav/Simulator Locations/W-16.gpx"; sourceTree = SOURCE_ROOT; };
 		DB7FD07A25CB95A900052FA3 /* CreateUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserUseCase.swift; sourceTree = "<group>"; };
+		DB82F583263A4F02005E4BFD /* multipleSimulatorsStartup.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = multipleSimulatorsStartup.sh; sourceTree = "<group>"; };
+		DB82F584263A4F02005E4BFD /* MultipleSimulators.config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MultipleSimulators.config; sourceTree = "<group>"; };
 		DBA3CAB52605640C00FEAEE6 /* Pulsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pulsing.swift; sourceTree = "<group>"; };
 		DBAD892125CA318D00FC0D4C /* iOS_Emergency_Indoor_Nav.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOS_Emergency_Indoor_Nav.entitlements; sourceTree = "<group>"; };
 		DBAD892D25CA394B00FC0D4C /* UpdateDeviceTokenIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDeviceTokenIdUseCase.swift; sourceTree = "<group>"; };
@@ -444,6 +448,8 @@
 		DBE0C9C125C26F46009B9CB0 = {
 			isa = PBXGroup;
 			children = (
+				DB82F584263A4F02005E4BFD /* MultipleSimulators.config */,
+				DB82F583263A4F02005E4BFD /* multipleSimulatorsStartup.sh */,
 				DBE0C9CC25C26F46009B9CB0 /* iOS_Emergency_Indoor_Nav */,
 				DBE0C9E325C26F48009B9CB0 /* iOS_Emergency_Indoor_NavTests */,
 				DBE0C9EE25C26F48009B9CB0 /* iOS_Emergency_Indoor_NavUITests */,
@@ -520,6 +526,7 @@
 				DBE0C9C725C26F46009B9CB0 /* Frameworks */,
 				DBE0C9C825C26F46009B9CB0 /* Resources */,
 				D24523A30BBEFAACC2BDD7CD /* [CP] Embed Pods Frameworks */,
+				DBB0B84F263A5826005027DB /* MultipleSimulators */,
 			);
 			buildRules = (
 			);
@@ -634,6 +641,7 @@
 				DBC4C51426001A6F006957AD /* W-22.gpx in Resources */,
 				DB57B6B725F083A300D17DFC /* Beacons.plist in Resources */,
 				DBC4C52426001A6F006957AD /* W-11.gpx in Resources */,
+				DB82F586263A4F02005E4BFD /* MultipleSimulators.config in Resources */,
 				DBC8EDC025E9B4B7009112F3 /* R-C1 to exit.gpx in Resources */,
 				DBCD388825C8BC420015CD3A /* amplifyconfiguration.json in Resources */,
 				DBC4C51026001A6F006957AD /* R-D2.gpx in Resources */,
@@ -651,6 +659,7 @@
 				DBC4C50A26001A6F006957AD /* W-15.gpx in Resources */,
 				DBE0C9D725C26F48009B9CB0 /* Assets.xcassets in Resources */,
 				DBC4C50C26001A6F006957AD /* W-3.gpx in Resources */,
+				DB82F585263A4F02005E4BFD /* multipleSimulatorsStartup.sh in Resources */,
 				DB01EE10263395F7001CA346 /* test.gpx in Resources */,
 				DBC4C51826001A6F006957AD /* R-M2.gpx in Resources */,
 				DBC4C50D26001A6F006957AD /* R-A1.gpx in Resources */,
@@ -786,6 +795,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS_Emergency_Indoor_Nav/Pods-iOS_Emergency_Indoor_Nav-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DBB0B84F263A5826005027DB /* MultipleSimulators */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = MultipleSimulators;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncustom_sim=`xcrun simctl list | grep 'MultipleSimulators' | awk -F'[()]' '{print $2}'`\nif [ ! -z \"${custom_sim}\" ] && [ \"${TARGET_DEVICE_IDENTIFIER}\" = \"${custom_sim}\" ]; then\n/bin/sh multipleSimulatorsStartup.sh &\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
