@@ -16,6 +16,7 @@ extension Edge {
     case name
     case latitude
     case longitude
+    case hasWindows
   }
   
   public static let keys = CodingKeys.self
@@ -37,7 +38,8 @@ extension Edge {
       .field(edge.canBeDeactivated, is: .required, ofType: .bool),
       .field(edge.name, is: .optional, ofType: .string),
       .field(edge.latitude, is: .optional, ofType: .double),
-      .field(edge.longitude, is: .optional, ofType: .double)
+      .field(edge.longitude, is: .optional, ofType: .double),
+      .field(edge.hasWindows, is: .optional, ofType: .bool)
     )
     }
 }

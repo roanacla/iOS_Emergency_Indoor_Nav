@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="Open GPX Tracker for iOS">
+	<wpt lat="37.32947031269469" lon="-121.8895822763443">
+		<time>2021-05-03T17:00:50Z</time>
+		<name>R-M1</name>
+	</wpt>
+	<wpt lat="37.32954496030182" lon="-121.8894052505493">
+		<time>2021-05-03T17:00:52Z</time>
+		<name>R-M2</name>
+	</wpt>
+	<wpt lat="37.32932634924292" lon="-121.88923090696335">
+		<time>2021-05-03T17:00:56Z</time>
+		<name>W-10</name>
+	</wpt>
+	<wpt lat="37.32949164059004" lon="-121.88887417316435">
+		<time>2021-05-03T17:01:00Z</time>
+		<name>W-12</name>
+	</wpt>
+	<wpt lat="37.3295993463689" lon="-121.88865154981613">
+		<time>2021-05-03T17:01:02Z</time>
+		<name>W-15</name>
+	</wpt>
+	<wpt lat="37.33015066957142" lon="-121.88908606767653">
+		<time>2021-05-03T17:01:10Z</time>
+		<name>W-16</name>
+	</wpt>
+	<wpt lat="37.33015066957142" lon="-121.88908606767653">
+		<time>2021-05-03T17:16:10Z</time>
+		<name>END</name>
+	</wpt>
+</gpx>

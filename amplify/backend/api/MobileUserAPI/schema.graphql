@@ -18,6 +18,7 @@ type Edge @model @key(name: "byBuilding", fields: ["buildingId"]) {
     name: String
     latitude: Float
     longitude: Float
+    hasWindows: Boolean
 }
 
 type IoT @model {

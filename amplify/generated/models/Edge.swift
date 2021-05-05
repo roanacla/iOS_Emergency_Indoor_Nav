@@ -14,6 +14,7 @@ public struct Edge: Model {
   public var name: String?
   public var latitude: Double?
   public var longitude: Double?
+  public var hasWindows: Bool?
   
   public init(id: String = UUID().uuidString,
       buildingId: String,
@@ -25,7 +26,8 @@ public struct Edge: Model {
       canBeDeactivated: Bool,
       name: String? = nil,
       latitude: Double? = nil,
-      longitude: Double? = nil) {
+      longitude: Double? = nil,
+      hasWindows: Bool? = nil) {
       self.id = id
       self.buildingId = buildingId
       self.sourceIoTId = sourceIoTId
@@ -37,5 +39,6 @@ public struct Edge: Model {
       self.name = name
       self.latitude = latitude
       self.longitude = longitude
+      self.hasWindows = hasWindows
   }
 }

@@ -16,7 +16,6 @@
 		DB01EDFC26338CF9001CA346 /* IoT+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EDF626338CF9001CA346 /* IoT+Schema.swift */; };
 		DB01EDFD26338CF9001CA346 /* Edge+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EDF726338CF9001CA346 /* Edge+Schema.swift */; };
 		DB01EDFE26338CF9001CA346 /* Building+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EDF826338CF9001CA346 /* Building+Schema.swift */; };
-		DB01EE10263395F7001CA346 /* test.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DB01EE0F263395F7001CA346 /* test.gpx */; };
 		DB57B6A225F072FF00D17DFC /* IndoorMapViewController+LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB57B6A125F072FF00D17DFC /* IndoorMapViewController+LocationManagerDelegate.swift */; };
 		DB57B6AA25F0745B00D17DFC /* IndoorMapViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB57B6A925F0745B00D17DFC /* IndoorMapViewController+MKMapViewDelegate.swift */; };
 		DB57B6B725F083A300D17DFC /* Beacons.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB57B6B625F083A300D17DFC /* Beacons.plist */; };
@@ -87,7 +86,6 @@
 		DBC4C52C26001FAC006957AD /* RemoteCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC4C52B26001FAC006957AD /* RemoteCommands.swift */; };
 		DBC8EDB325E9A82A009112F3 /* SafeRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8EDB225E9A82A009112F3 /* SafeRegion.swift */; };
 		DBC8EDBB25E9AA0D009112F3 /* SafeRegions.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBC8EDBA25E9AA0D009112F3 /* SafeRegions.plist */; };
-		DBC8EDC025E9B4B7009112F3 /* R-C1 to exit.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBC8EDBF25E9B4B7009112F3 /* R-C1 to exit.gpx */; };
 		DBCD388725C8BC420015CD3A /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = DBCD388525C8BC420015CD3A /* awsconfiguration.json */; };
 		DBCD388825C8BC420015CD3A /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = DBCD388625C8BC420015CD3A /* amplifyconfiguration.json */; };
 		DBCD389025C8C63D0015CD3A /* MobileUser+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD388D25C8C63D0015CD3A /* MobileUser+Schema.swift */; };
@@ -97,6 +95,7 @@
 		DBCD38BC25C8F13B0015CD3A /* UpdateLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD38BB25C8F13B0015CD3A /* UpdateLocationUseCase.swift */; };
 		DBCD38C225C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD38C125C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift */; };
 		DBCD38CD25C8F77B0015CD3A /* MobileUserRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD38CC25C8F77B0015CD3A /* MobileUserRemoteAPI.swift */; };
+		DBDA2CB42640C67000CE1B00 /* M1-W16.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBDA2CB32640C67000CE1B00 /* M1-W16.gpx */; };
 		DBDC947F26378BC1001BEA28 /* UpdateCoordinateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBDC947E26378BC1001BEA28 /* UpdateCoordinateUseCase.swift */; };
 		DBE0C9CE25C26F46009B9CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9CD25C26F46009B9CB0 /* AppDelegate.swift */; };
 		DBE0C9D025C26F46009B9CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE0C9CF25C26F46009B9CB0 /* SceneDelegate.swift */; };
@@ -141,7 +140,6 @@
 		DB01EDF626338CF9001CA346 /* IoT+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "IoT+Schema.swift"; path = "amplify/generated/models/IoT+Schema.swift"; sourceTree = SOURCE_ROOT; };
 		DB01EDF726338CF9001CA346 /* Edge+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Edge+Schema.swift"; path = "amplify/generated/models/Edge+Schema.swift"; sourceTree = SOURCE_ROOT; };
 		DB01EDF826338CF9001CA346 /* Building+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Building+Schema.swift"; path = "amplify/generated/models/Building+Schema.swift"; sourceTree = SOURCE_ROOT; };
-		DB01EE0F263395F7001CA346 /* test.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.gpx; sourceTree = "<group>"; };
 		DB57B6A125F072FF00D17DFC /* IndoorMapViewController+LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndoorMapViewController+LocationManagerDelegate.swift"; sourceTree = "<group>"; };
 		DB57B6A925F0745B00D17DFC /* IndoorMapViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndoorMapViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
 		DB57B6B625F083A300D17DFC /* Beacons.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Beacons.plist; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 		DBC4C52B26001FAC006957AD /* RemoteCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteCommands.swift; sourceTree = "<group>"; };
 		DBC8EDB225E9A82A009112F3 /* SafeRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeRegion.swift; sourceTree = "<group>"; };
 		DBC8EDBA25E9AA0D009112F3 /* SafeRegions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SafeRegions.plist; sourceTree = "<group>"; };
-		DBC8EDBF25E9B4B7009112F3 /* R-C1 to exit.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "R-C1 to exit.gpx"; path = "iOS_Emergency_Indoor_Nav/R-C1 to exit.gpx"; sourceTree = SOURCE_ROOT; };
 		DBCD388525C8BC420015CD3A /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		DBCD388625C8BC420015CD3A /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
 		DBCD388D25C8C63D0015CD3A /* MobileUser+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MobileUser+Schema.swift"; path = "amplify/generated/models/MobileUser+Schema.swift"; sourceTree = SOURCE_ROOT; };
@@ -223,6 +220,7 @@
 		DBCD38BB25C8F13B0015CD3A /* UpdateLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocationUseCase.swift; sourceTree = "<group>"; };
 		DBCD38C125C8F4DD0015CD3A /* MobileUserAmplifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileUserAmplifyAPI.swift; sourceTree = "<group>"; };
 		DBCD38CC25C8F77B0015CD3A /* MobileUserRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileUserRemoteAPI.swift; sourceTree = "<group>"; };
+		DBDA2CB32640C67000CE1B00 /* M1-W16.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "M1-W16.gpx"; sourceTree = "<group>"; };
 		DBDC947E26378BC1001BEA28 /* UpdateCoordinateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCoordinateUseCase.swift; sourceTree = "<group>"; };
 		DBE0C9CA25C26F46009B9CB0 /* iOS_Emergency_Indoor_Nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Emergency_Indoor_Nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE0C9CD25C26F46009B9CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -448,6 +446,7 @@
 		DBE0C9C125C26F46009B9CB0 = {
 			isa = PBXGroup;
 			children = (
+				DBDA2CB32640C67000CE1B00 /* M1-W16.gpx */,
 				DB82F584263A4F02005E4BFD /* MultipleSimulators.config */,
 				DB82F583263A4F02005E4BFD /* multipleSimulatorsStartup.sh */,
 				DBE0C9CC25C26F46009B9CB0 /* iOS_Emergency_Indoor_Nav */,
@@ -473,8 +472,6 @@
 			isa = PBXGroup;
 			children = (
 				DBC4C4D326000FC4006957AD /* Simulator Locations */,
-				DBC8EDBF25E9B4B7009112F3 /* R-C1 to exit.gpx */,
-				DB01EE0F263395F7001CA346 /* test.gpx */,
 				DB626D0325DC66E6007BCAF5 /* San Jose Convention Center.gpx */,
 				DBAD892125CA318D00FC0D4C /* iOS_Emergency_Indoor_Nav.entitlements */,
 				DBCD38B425C8EC910015CD3A /* CoreLogic */,
@@ -631,6 +628,7 @@
 				DBCD388725C8BC420015CD3A /* awsconfiguration.json in Resources */,
 				DBC4C50E26001A6F006957AD /* W-10.gpx in Resources */,
 				DBC4C4FF26001A6F006957AD /* W-4.gpx in Resources */,
+				DBDA2CB42640C67000CE1B00 /* M1-W16.gpx in Resources */,
 				DBE0C9DA25C26F48009B9CB0 /* LaunchScreen.storyboard in Resources */,
 				DBC4C52026001A6F006957AD /* R-A2.gpx in Resources */,
 				DBC4C50026001A6F006957AD /* W-1.gpx in Resources */,
@@ -642,7 +640,6 @@
 				DB57B6B725F083A300D17DFC /* Beacons.plist in Resources */,
 				DBC4C52426001A6F006957AD /* W-11.gpx in Resources */,
 				DB82F586263A4F02005E4BFD /* MultipleSimulators.config in Resources */,
-				DBC8EDC025E9B4B7009112F3 /* R-C1 to exit.gpx in Resources */,
 				DBCD388825C8BC420015CD3A /* amplifyconfiguration.json in Resources */,
 				DBC4C51026001A6F006957AD /* R-D2.gpx in Resources */,
 				DBC4C51B26001A6F006957AD /* W-7.gpx in Resources */,
@@ -660,7 +657,6 @@
 				DBE0C9D725C26F48009B9CB0 /* Assets.xcassets in Resources */,
 				DBC4C50C26001A6F006957AD /* W-3.gpx in Resources */,
 				DB82F585263A4F02005E4BFD /* multipleSimulatorsStartup.sh in Resources */,
-				DB01EE10263395F7001CA346 /* test.gpx in Resources */,
 				DBC4C51826001A6F006957AD /* R-M2.gpx in Resources */,
 				DBC4C50D26001A6F006957AD /* R-A1.gpx in Resources */,
 				DBC4C50F26001A6F006957AD /* R-H1.gpx in Resources */,
