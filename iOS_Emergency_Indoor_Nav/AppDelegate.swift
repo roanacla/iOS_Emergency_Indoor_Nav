@@ -101,15 +101,23 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else {
       return
     }
-    
     let userInfo = response.notification.request.content.userInfo
-    if let notification = userInfo["shortestPath"] as? String {
+    guard let vc = rootViewController as? IndoorMapViewController else { return }
+    guard let code = Int(userInfo["actionCode"] as! String) else { return }
+    switch code {
+    case 0:
+      guard let notification = userInfo["shortestPath"] as? String else { return }
       let jsonData = notification.data(using: .utf8)!
       let decoder = JSONDecoder()
-      let remoteCommands = try! decoder.decode(RemoteCommands.self, from: jsonData)
-      if let vc = rootViewController as? IndoorMapViewController {
-        vc.startSafeMode(path: remoteCommands.shortestPath)
-      }
+      var path: [String] = []
+      path = try! decoder.decode([String].self, from: jsonData)
+      vc.startSafeMode(path: path)
+    case 1:
+      vc.displayWaitForRescueMessage()
+    case 2:
+      vc.displayGetCloseToTheWindows()
+    default:
+      break
     }
 
     completionHandler()

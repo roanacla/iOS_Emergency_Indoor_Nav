@@ -33,16 +33,6 @@ extension IndoorMapViewController: CLLocationManagerDelegate {
     }
   }
   
-  func displaySafeMessage() {
-    let alertController = UIAlertController(title: "You are safe now", message: "Plasese wait for first responder's instructions", preferredStyle: .alert)
-    let alertAction = UIAlertAction(title: "OK", style: .default) {
-      [weak self] action in
-      self?.dismiss(animated: true, completion: nil)
-    }
-    alertController.addAction(alertAction)
-    present(alertController, animated: false, completion: nil)
-  }
-  
   func pushLocalNotification(for region: CLRegion) {
     let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
     let content = UNMutableNotificationContent()
@@ -92,10 +82,10 @@ extension IndoorMapViewController: CLLocationManagerDelegate {
   private func activateLocationServices() {
     if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
       for safeRegion in safeRegions {
-        let region = CLCircularRegion(center: safeRegion.location.coordinate, radius: 100.0, identifier: safeRegion.name)
+        let region = CLCircularRegion(center: safeRegion.location.coordinate, radius: 110.0, identifier: safeRegion.name)
         region.notifyOnEntry = true
         locationManager.startMonitoring(for: region)
-//        mapView.addOverlay(MKCircle(center: safeRegion.location.coordinate, radius: 100.0)) //draw safety circle
+//        mapView.addOverlay(MKCircle(center: safeRegion.location.coordinate, radius: 115.0)) //draw safety circle
       }
     }
     locationManager.startUpdatingLocation()

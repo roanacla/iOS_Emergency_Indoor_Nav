@@ -53,7 +53,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     // Request location authorization so the user's current location can be displayed on the map
     locationManager.requestWhenInUseAuthorization()
     locationManager.delegate = self
-    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
     locationManager.allowsBackgroundLocationUpdates = true
     locationManager.requestLocation()
     locationManager.startUpdatingLocation()
@@ -209,6 +209,36 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
                                           remoteAPI: remoteAPI)
     useCase.start()
       .store(in: &subscriptions)
+  }
+  
+  func displaySafeMessage() {
+    let alertController = UIAlertController(title: "You are safe now", message: "Plasese wait for first responder's instructions", preferredStyle: .alert)
+    let alertAction = UIAlertAction(title: "OK", style: .default) {
+      [weak self] action in
+      self?.dismiss(animated: true, completion: nil)
+    }
+    alertController.addAction(alertAction)
+    present(alertController, animated: false, completion: nil)
+  }
+  
+  func displayWaitForRescueMessage() {
+    let alertController = UIAlertController(title: "Wait there", message: "No safe path found, stand by for rescue", preferredStyle: .alert)
+    let alertAction = UIAlertAction(title: "OK", style: .default) {
+      [weak self] action in
+      self?.dismiss(animated: true, completion: nil)
+    }
+    alertController.addAction(alertAction)
+    present(alertController, animated: false, completion: nil)
+  }
+  
+  func displayGetCloseToTheWindows() {
+    let alertController = UIAlertController(title: "Get close to the window", message: "No safe path found, move close to windows and stand by for rescue", preferredStyle: .alert)
+    let alertAction = UIAlertAction(title: "OK", style: .default) {
+      [weak self] action in
+      self?.dismiss(animated: true, completion: nil)
+    }
+    alertController.addAction(alertAction)
+    present(alertController, animated: false, completion: nil)
   }
   
   // MARK: - LevelPickerDelegate
