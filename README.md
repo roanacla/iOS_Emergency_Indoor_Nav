@@ -13,4 +13,5 @@
 2. Install all dependencies: $pod install --repo-update
 3. Configure Amplify with: $amplify configure
 4. Execute project in Xcode by typing: .xed
-5. Once in xcode, run the app in a simulator or real device.
+5. Deploy developmennt resources by typing: $amplify push
+6. Once in xcode, run the app in a simulator or real device
